@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nissimedical.com/sitemap.xml
+Sitemap: https://nissimedicaloutreach.org/sitemap.xml
