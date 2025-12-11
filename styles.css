@@ -135,6 +135,10 @@ ul { list-style: none; }
 }
 
 /* Mobile Navigation */
+.nav-toggle {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .top-bar {
         padding: 8px 0;
@@ -154,6 +158,10 @@ ul { list-style: none; }
         position: relative;
     }
     
+    .nav-content {
+        position: relative;
+    }
+    
     .logo {
         font-size: 20px;
     }
@@ -163,52 +171,66 @@ ul { list-style: none; }
     }
 
     .nav-links {
-        display: none;
+        display: none !important;
     }
     
     .btn-primary {
-        display: none;
+        display: none !important;
     }
 
     .nav-toggle {
-        display: block;
+        display: block !important;
         background: none;
         border: none;
         font-size: 24px;
         color: var(--dark-green);
         cursor: pointer;
         padding: 8px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .nav-links.mobile-open {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
-        gap: 15px;
+        gap: 0;
         background: white;
         position: absolute;
         top: 100%;
+        left: 0;
         right: 0;
-        width: 250px;
-        padding: 20px;
+        width: 100%;
+        padding: 0;
         border: 1px solid #eee;
         border-radius: 8px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         z-index: 1000;
+        margin-top: 10px;
     }
     
     .nav-links.mobile-open li {
         width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-links.mobile-open li:last-child {
+        border-bottom: none;
     }
     
     .nav-links.mobile-open a {
         display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #f0f0f0;
+        padding: 15px 20px;
         font-size: 16px;
+        color: var(--text-dark);
+        text-decoration: none;
     }
     
-    .nav-links.mobile-open a:hover {
+    .nav-links.mobile-open a:hover,
+    .nav-links.mobile-open a.active {
         color: var(--primary-orange);
+        background: rgba(255, 90, 48, 0.05);
     }
 }
 
