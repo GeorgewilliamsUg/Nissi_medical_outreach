@@ -66,7 +66,7 @@
                 <img src="images/logo1.png" alt="Nissi Medical Outreach" class="logo-img">
                 <span>Nissi Medical Outreach</span>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="missions.html">Missions</a></li>
@@ -75,6 +75,9 @@
             </ul>
 
             <a href="contact.html" class="btn btn-primary">DONATE NOW</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -262,6 +265,23 @@
 </footer>
 
 
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-open');
+    const icon = navToggle.querySelector('i');
+    if (navLinks.classList.contains('mobile-open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+</script>
 
 </body>
 </html>
