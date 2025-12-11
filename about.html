@@ -137,43 +137,63 @@
                 <h2 class="board-title">Our Board of Directors</h2>
                 <div class="board-slider">
                     <div class="board-track">
-                        <div class="board-member" onclick="openModal('modal1')">
+                        <div class="board-member">
                             <div class="board-image">
                                 <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emmanuel Baale" class="board-photo">
                             </div>
                             <div class="board-info">
                                 <h4>Dr. Emmanuel Baale</h4>
                                 <p class="board-position">Chairman</p>
+                                <div class="board-tooltip">
+                                    <p><strong>Specialization:</strong> Community Medicine</p>
+                                    <p><strong>Experience:</strong> 15+ years</p>
+                                    <p><strong>Focus:</strong> Rural healthcare access</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="board-member" onclick="openModal('modal2')">
+                        <div class="board-member">
                             <div class="board-image">
                                 <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Jemba Michael Senkole" class="board-photo">
                             </div>
                             <div class="board-info">
                                 <h4>Dr. Jemba Michael Senkole</h4>
                                 <p class="board-position">Vice Chairman</p>
+                                <div class="board-tooltip">
+                                    <p><strong>Specialization:</strong> Preventive Medicine</p>
+                                    <p><strong>Experience:</strong> 12+ years</p>
+                                    <p><strong>Focus:</strong> Health education programs</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="board-member" onclick="openModal('modal3')">
+                        <div class="board-member">
                             <div class="board-image">
                                 <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ms. Namukasa Litone" class="board-photo">
                             </div>
                             <div class="board-info">
                                 <h4>Ms. Namukasa Litone</h4>
                                 <p class="board-position">Nurse</p>
+                                <div class="board-tooltip">
+                                    <p><strong>Specialization:</strong> Maternal & Child Health</p>
+                                    <p><strong>Experience:</strong> 10+ years</p>
+                                    <p><strong>Focus:</strong> Community nursing</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="board-member" onclick="openModal('modal4')">
+                        <div class="board-member">
                             <div class="board-image">
                                 <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Okware Patric" class="board-photo">
                             </div>
                             <div class="board-info">
                                 <h4>Dr. Okware Patric</h4>
                                 <p class="board-position">Board Member</p>
+                                <div class="board-tooltip">
+                                    <p><strong>Specialization:</strong> General Practice</p>
+                                    <p><strong>Experience:</strong> 8+ years</p>
+                                    <p><strong>Focus:</strong> Rural healthcare delivery</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,94 +203,7 @@
     </div>
 </div>
 
-<!-- Modal Popups -->
-<div id="modal1" class="modal" onclick="closeModal('modal1')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <div class="modal-header">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emmanuel Baale" class="modal-photo">
-            <div class="modal-title">
-                <h3>Dr. Emmanuel Baale</h3>
-                <p class="modal-position">Chairman</p>
-            </div>
-        </div>
-        <div class="modal-body">
-            <p>Medical Doctor with 15+ years experience in community health. Passionate about healthcare accessibility in rural Uganda and committed to Christ-centered care delivery.</p>
-            <div class="modal-details">
-                <p><strong>Specialization:</strong> Community Medicine & Public Health</p>
-                <p><strong>Education:</strong> MBChB, MPH (Master of Public Health)</p>
-                <p><strong>Experience:</strong> 15+ years in community healthcare</p>
-                <p><strong>Focus Areas:</strong> Rural healthcare access, preventive medicine, health system strengthening</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div id="modal2" class="modal" onclick="closeModal('modal2')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <div class="modal-header">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Jemba Michael Senkole" class="modal-photo">
-            <div class="modal-title">
-                <h3>Dr. Jemba Michael Senkole</h3>
-                <p class="modal-position">Vice Chairman</p>
-            </div>
-        </div>
-        <div class="modal-body">
-            <p>Experienced physician specializing in preventive medicine and health education programs across Uganda's rural communities.</p>
-            <div class="modal-details">
-                <p><strong>Specialization:</strong> Preventive Medicine & Health Education</p>
-                <p><strong>Education:</strong> MBChB, Diploma in Public Health</p>
-                <p><strong>Experience:</strong> 12+ years in public health initiatives</p>
-                <p><strong>Focus Areas:</strong> Disease prevention, community health education, maternal health</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal3" class="modal" onclick="closeModal('modal3')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <div class="modal-header">
-            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ms. Namukasa Litone" class="modal-photo">
-            <div class="modal-title">
-                <h3>Ms. Namukasa Litone</h3>
-                <p class="modal-position">Registered Nurse</p>
-            </div>
-        </div>
-        <div class="modal-body">
-            <p>Registered nurse with extensive experience in maternal and child health programs across Uganda's underserved communities.</p>
-            <div class="modal-details">
-                <p><strong>Specialization:</strong> Maternal & Child Health</p>
-                <p><strong>Certification:</strong> RN, BSN (Bachelor of Science in Nursing)</p>
-                <p><strong>Experience:</strong> 10+ years in community nursing</p>
-                <p><strong>Focus Areas:</strong> Maternal health, child immunization, family planning, nutrition education</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal4" class="modal" onclick="closeModal('modal4')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closeModal('modal4')">&times;</span>
-        <div class="modal-header">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Okware Patric" class="modal-photo">
-            <div class="modal-title">
-                <h3>Dr. Okware Patric</h3>
-                <p class="modal-position">Board Member</p>
-            </div>
-        </div>
-        <div class="modal-body">
-            <p>General practitioner with focus on rural healthcare delivery and medical outreach coordination in remote Ugandan communities.</p>
-            <div class="modal-details">
-                <p><strong>Specialization:</strong> General Practice & Rural Medicine</p>
-                <p><strong>Education:</strong> MBChB, Certificate in Rural Health</p>
-                <p><strong>Experience:</strong> 8+ years in rural healthcare delivery</p>
-                <p><strong>Focus Areas:</strong> Rural healthcare systems, medical outreach coordination, emergency care</p>
-            </div>
-        </div>
-    </div>
-</div>
 </main>
 
 <footer class="footer">
@@ -328,28 +261,7 @@
     </div>
 </footer>
 
-<script>
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Close modal when pressing Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            modal.style.display = 'none';
-        });
-        document.body.style.overflow = 'auto';
-    }
-});
-</script>
 
 </body>
 </html>
