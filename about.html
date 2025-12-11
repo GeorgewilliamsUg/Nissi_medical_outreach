@@ -22,6 +22,9 @@
     <link rel="icon" type="image/png" href="images/ico1.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://nissimedicaloutreach.org/about">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script type="application/ld+json">
 {
@@ -35,6 +38,46 @@
 </head>
 <body class="about-page">
 
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="tb-left">
+                <p><i class="fa-solid fa-people-group"></i> Nissi Medical Outreach : <a href="#">BECOME A VOLUNTEER</a></p>
+            </div>
+            <div class="tb-right">
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope"></i> <span>info@nissimedicaloutreach.org</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i> <span>+256 782 862777</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="home.html" class="logo">
+                <img src="images/logo1.png" alt="Nissi Medical Outreach" class="logo-img">
+                <span>Nissi Medical Outreach</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="missions.html">Missions</a></li>
+                <li><a href="causes.html">Causes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="btn btn-primary">DONATE NOW</a>
+        </div>
+    </nav>
+
 <main>
 <div class="about-overlay">
     <div class="about-container">
@@ -46,41 +89,267 @@
             <div class="glassy-text">
                 <h2>Who We Are</h2>
                 <p>
-                    Nissi Medical Outreach is a registered Community Based Organisation committed to strengthening
-                    preventive health, youth empowerment, and reproductive health education across Uganda. We are
-                    dedicated to providing exceptional medical services and health education to underserved communities.
+                    Nissi Medical Outreach is a Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities. We exist to serve with excellence, dignity, and love, reflecting the hope of Christ by addressing practical medical needs and promoting long-term wellbeing.
                 </p>
             </div>
 
             <div class="glassy-text">
                 <h2>Our Mission</h2>
                 <p>
-                    To promote health and dignity by equipping families and young people with knowledge, preventive
-                    practices, and access to essential services. We focus on preventive health education, medical
-                    outreaches, youth training, and reproductive health support.
-                </p>
-            </div>
-
-            <div class="glassy-text">
-                <h2>Our Impact</h2>
-                <p>
-                    Through community visits, school partnerships, church collaborations, and joint activities with
-                    local health workers, we've helped families improve health information, hygiene, and access to care.
+                    To provide compassionate medical outreach, preventive care, and health education to underserved communities across Uganda. We equip families with essential health knowledge and support vulnerable groups through services that promote dignity and long-term wellness.
                 </p>
             </div>
 
             <div class="glassy-text">
                 <h2>Our Vision</h2>
                 <p>
-                    A world where quality healthcare and compassionate service are accessible to all. We believe in
-                    bridging gaps in medical accessibility and strengthening community wellness through dedicated
-                    outreach and education.
+                    A Uganda where every community has access to quality healthcare and health education. We envision communities empowered with knowledge and resources to maintain their health and wellbeing through Christ-centered compassionate care.
                 </p>
+            </div>
+
+            <div class="glassy-text">
+                <h2>Our Impact</h2>
+                <p>
+                    Through medical missions, community health education, and partnerships with local healthcare workers, we have touched hundreds of lives across Uganda. Our work focuses on preventive care, health literacy, and building sustainable healthcare practices in rural and underserved communities.
+                </p>
+            </div>
+            
+            <div class="founder-section">
+                <h2 class="founder-title">Meet Our Founder</h2>
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="images/baale.png" alt="Dr. Baale Emmanuel" class="founder-photo">
+                    </div>
+                    <div class="founder-info">
+                        <h3>Dr. Baale Emmanuel</h3>
+                        <p class="founder-title-text">Founder & Medical Director</p>
+                        <p class="founder-bio">
+                            Dr. Baale Emmanuel is a dedicated physician and visionary leader who founded Nissi Medical Outreach with a heart for serving Uganda's underserved communities. With extensive experience in community health and a deep commitment to Christ-centered care, Dr. Emmanuel leads our mission to bring hope, healing, and dignity to those who need it most.
+                        </p>
+                        <p class="founder-bio">
+                            His passion for preventive healthcare and community empowerment drives our organization's approach to sustainable health solutions across Uganda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="board-section">
+                <h2 class="board-title">Our Board of Directors</h2>
+                <div class="board-slider">
+                    <div class="board-track">
+                        <div class="board-member" onclick="openModal('modal1')">
+                            <div class="board-image">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emmanuel Baale" class="board-photo">
+                            </div>
+                            <div class="board-info">
+                                <h4>Dr. Emmanuel Baale</h4>
+                                <p class="board-position">Chairman</p>
+                            </div>
+                        </div>
+                        
+                        <div class="board-member" onclick="openModal('modal2')">
+                            <div class="board-image">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Jemba Michael Senkole" class="board-photo">
+                            </div>
+                            <div class="board-info">
+                                <h4>Dr. Jemba Michael Senkole</h4>
+                                <p class="board-position">Vice Chairman</p>
+                            </div>
+                        </div>
+                        
+                        <div class="board-member" onclick="openModal('modal3')">
+                            <div class="board-image">
+                                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ms. Namukasa Litone" class="board-photo">
+                            </div>
+                            <div class="board-info">
+                                <h4>Ms. Namukasa Litone</h4>
+                                <p class="board-position">Nurse</p>
+                            </div>
+                        </div>
+                        
+                        <div class="board-member" onclick="openModal('modal4')">
+                            <div class="board-image">
+                                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Okware Patric" class="board-photo">
+                            </div>
+                            <div class="board-info">
+                                <h4>Dr. Okware Patric</h4>
+                                <p class="board-position">Board Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Popups -->
+<div id="modal1" class="modal" onclick="closeModal('modal1')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emmanuel Baale" class="modal-photo">
+            <div class="modal-title">
+                <h3>Dr. Emmanuel Baale</h3>
+                <p class="modal-position">Chairman</p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>Medical Doctor with 15+ years experience in community health. Passionate about healthcare accessibility in rural Uganda and committed to Christ-centered care delivery.</p>
+            <div class="modal-details">
+                <p><strong>Specialization:</strong> Community Medicine & Public Health</p>
+                <p><strong>Education:</strong> MBChB, MPH (Master of Public Health)</p>
+                <p><strong>Experience:</strong> 15+ years in community healthcare</p>
+                <p><strong>Focus Areas:</strong> Rural healthcare access, preventive medicine, health system strengthening</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal2" class="modal" onclick="closeModal('modal2')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Jemba Michael Senkole" class="modal-photo">
+            <div class="modal-title">
+                <h3>Dr. Jemba Michael Senkole</h3>
+                <p class="modal-position">Vice Chairman</p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>Experienced physician specializing in preventive medicine and health education programs across Uganda's rural communities.</p>
+            <div class="modal-details">
+                <p><strong>Specialization:</strong> Preventive Medicine & Health Education</p>
+                <p><strong>Education:</strong> MBChB, Diploma in Public Health</p>
+                <p><strong>Experience:</strong> 12+ years in public health initiatives</p>
+                <p><strong>Focus Areas:</strong> Disease prevention, community health education, maternal health</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal3" class="modal" onclick="closeModal('modal3')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ms. Namukasa Litone" class="modal-photo">
+            <div class="modal-title">
+                <h3>Ms. Namukasa Litone</h3>
+                <p class="modal-position">Registered Nurse</p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>Registered nurse with extensive experience in maternal and child health programs across Uganda's underserved communities.</p>
+            <div class="modal-details">
+                <p><strong>Specialization:</strong> Maternal & Child Health</p>
+                <p><strong>Certification:</strong> RN, BSN (Bachelor of Science in Nursing)</p>
+                <p><strong>Experience:</strong> 10+ years in community nursing</p>
+                <p><strong>Focus Areas:</strong> Maternal health, child immunization, family planning, nutrition education</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal4" class="modal" onclick="closeModal('modal4')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Okware Patric" class="modal-photo">
+            <div class="modal-title">
+                <h3>Dr. Okware Patric</h3>
+                <p class="modal-position">Board Member</p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>General practitioner with focus on rural healthcare delivery and medical outreach coordination in remote Ugandan communities.</p>
+            <div class="modal-details">
+                <p><strong>Specialization:</strong> General Practice & Rural Medicine</p>
+                <p><strong>Education:</strong> MBChB, Certificate in Rural Health</p>
+                <p><strong>Experience:</strong> 8+ years in rural healthcare delivery</p>
+                <p><strong>Focus Areas:</strong> Rural healthcare systems, medical outreach coordination, emergency care</p>
             </div>
         </div>
     </div>
 </div>
 </main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo1.png" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <span>Nissi Medical Outreach</span>
+                </div>
+                <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="causes.html">Our Causes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Medical Outreach</a></li>
+                    <li><a href="#">Health Education</a></li>
+                    <li><a href="#">Youth Programs</a></li>
+                    <li><a href="#">Maternal Health</a></li>
+                    <li><a href="#">Community Care</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+                    <p><i class="fa-solid fa-phone"></i> +256 782 862777</p>
+                    <p><i class="fa-regular fa-envelope"></i> info@nissimedicaloutreach.org</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nissi Medical Outreach. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 
 </body>
 </html>
