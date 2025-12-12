@@ -319,50 +319,47 @@ h1 span:nth-child(4) { color: var(--primary-orange); }
 /* --- Hero Bottom Features Bar --- */
 .hero-features-bar {
     width: 100%;
-    background-color: #fdfaf6; /* A warm cream color (like your reference image) */
-    border-top: 1px solid #eee; /* Subtle separator */
-    padding: 30px 20px;
+    background-color: rgba(253, 250, 246, 0.95); /* Slightly transparent cream */
+    border-top: 1px solid #eee;
+    padding: 25px 20px;
     
-    /* If you want it to overlap the Hero Image, uncomment these lines: */
-    /* position: absolute;
+    /* ENABLE THIS to make it sit at the bottom of the hero image */
+    position: absolute; 
     bottom: 0;
     left: 0;
-    */
+    z-index: 10; /* Ensures it sits ON TOP of the hero image */
 }
 
 .feature-container {
-    max-width: 1200px; /* Keeps content centered */
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Spreads items evenly */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Individual Feature Item */
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between Icon and Text */
-    flex: 1; /* Makes all 3 items equal width */
-    justify-content: center; /* Centers content within its 1/3rd slot */
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
 }
 
-/* The Icon Styling */
-.feature-icon {
-    font-size: 35px; /* Size for emoji placeholders */
-    color: #f57542; /* Nissi Orange - outlines would be this color */
-    
-    /* If using images/SVGs, use this instead: */
-    /* width: 50px; height: 50px; */
+/* Updated Icon Styling for SVGs */
+.feature-icon svg {
+    width: 40px;      /* Perfect icon size */
+    height: 40px;
+    stroke: #f57542;  /* Nissi Orange */
+    stroke-width: 1.5;
 }
 
-/* The Text Styling */
 .feature-text h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: #003366; /* Nissi Deep Blue */
-    margin-bottom: 4px;
+    color: #003366;
+    margin: 0 0 4px 0;
 }
 
 .feature-text p {
@@ -372,53 +369,26 @@ h1 span:nth-child(4) { color: var(--primary-orange); }
     margin: 0;
 }
 
-/* Vertical Divider Line */
 .feature-divider {
     width: 1px;
     height: 40px;
-    background-color: #ddd;
-    margin: 0 20px;
+    background-color: #e0e0e0;
+    margin: 0 10px;
 }
 
-/* --- Mobile Responsiveness --- */
+/* Mobile Fix */
 @media (max-width: 768px) {
     .hero-features-bar {
-        padding: 20px;
+        position: relative; /* On mobile, let it sit below the image naturally */
     }
-    
     .feature-container {
         flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        align-items: flex-start;
+        gap: 20px;
     }
-
-    .feature-item {
-        justify-content: center;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .feature-text h3 {
-        font-size: 16px;
-    }
-    
-    .feature-text p {
-        font-size: 13px;
-    }
-
-    .feature-divider {
-        display: none;
-    }
+    .feature-divider { display: none; }
+    .feature-item { justify-content: flex-start; }
 }
-
-.btn-text {
-    color: #fff;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.btn-text:hover { color: var(--primary-orange); }
 
 /* Right Image */
 .hero-image-container {
