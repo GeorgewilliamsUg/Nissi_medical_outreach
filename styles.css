@@ -22,6 +22,44 @@ body {
     color: var(--text-dark);
 }
 
+/* Add a relative position to body so we can place the map behind it */
+body {
+    position: relative;
+    background-color: #fff; /* Keep the main page white */
+}
+
+/* This creates the faint map background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Adjust this height to control how far down the map goes */
+    height: 1200px; 
+    
+    /* This is a clean grey world map image */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg');
+    
+    /* Center it and make it cover the width */
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* THE SECRET SAUCE: Low opacity makes it look like a watermark */
+    opacity: 0.05; 
+    
+    /* Send it behind all your text and buttons */
+    z-index: -1; 
+    
+    /* Ensure it doesn't interfere with clicking buttons */
+    pointer-events: none;
+    
+    /* Optional: Improves blending with the white background */
+    filter: grayscale(100%); 
+}
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
