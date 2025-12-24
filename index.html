@@ -22,14 +22,14 @@
     <meta name="twitter:title" content="Nissi Medical Outreach">
     <meta name="twitter:description" content="Medical missions, preventive care and community health services across Uganda.">
 
-    <link rel="icon" href="https://nissimedicaloutreach.org/images/logo1.webp" sizes="any">
-    <link rel="apple-touch-icon" href="https://nissimedicaloutreach.org/images/logo1.webp">
+    <link rel="icon" href="https://nissimedicaloutreach.org/images/logo.webp" sizes="any">
+    <link rel="apple-touch-icon" href="https://nissimedicaloutreach.org/images/logo.webp">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://nissimedicaloutreach.org/">
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <script type="application/ld+json">
     [
@@ -54,341 +54,82 @@
     ]
     </script>
     <style>
-        :root {
-    --primary-orange: #fb9b28;
-    --primary-black: #000000;
-    --text-grey: #666666;
-    --bg-light: #ffffff;
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
-}
+    /* Mission Snapshot */
+    .mission-snapshot { 
+        padding: 80px 0; 
+        background: transparentt 
+    }
+    
+    .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    .mission-label {
+        color: var(--primary-orange);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 13px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 15px;
+    }
 
-body {
-    font-family: var(--font-body);
-    color: #333;
-    overflow-x: hidden;
-}
+    .mission-header h2 {
+        font-family: var(--font-heading);
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--dark-green);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    .mission-body p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text-grey);
+        margin-bottom: 20px;
+    }
+    
+    .mission-link {
+        color: var(--dark-green);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s;
+    }
+    
+    .mission-link:hover {
+        color: var(--primary-orange);
+    }
 
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-
-/* --- Buttons --- */
-.btn {
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.btn-orange {
-    background-color: var(--primary-orange);
-    color: white;
-}
-.btn-orange:hover { background-color: #e58a1f; }
-
-.btn-black {
-    background-color: var(--primary-black);
-    color: white;
-    padding: 15px 35px;
-}
-.btn-black:hover { background-color: #333; }
-
-/* --- Navbar --- */
-.navbar {
-    padding: 20px 0;
-    background: white;
-}
-
-/* Navbar layout matching HTML markup */
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.nav-links li { list-style: none; }
-.nav-links li a {
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-    text-transform: uppercase;
-}
-.nav-links li a:hover, .nav-links li a.active { color: var(--primary-orange); }
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Donate button style when using .btn-primary in markup */
-.btn-primary {
-    background-color: var(--primary-black);
-    color: #fff;
-    padding: 12px 26px;
-    border-radius: 30px;
-    font-weight: 600;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.logo i { color: var(--primary-orange); }
-
-.nav-menu {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-menu a {
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-    text-transform: uppercase;
-}
-.nav-menu a:hover, .nav-menu a.active { color: var(--primary-orange); }
-
-.nav-actions { display: flex; align-items: center; gap: 25px; }
-
-.phone-contact {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 14px;
-}
-.phone-contact i { color: var(--primary-orange); }
-
-/* --- Hero Section --- */
-.hero {
-    position: relative;
-    padding: 80px 0 50px;
-    background-color: #fff;
-}
-
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    align-items: center;
-    gap: 50px;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-text h1 {
-    font-family: var(--font-heading);
-    font-size: 72px; /* Large font size */
-    line-height: 1.1;
-    color: #1a1a1a;
-    margin-bottom: 25px;
-}
-
-.hero-text p {
-    color: var(--text-grey);
-    font-size: 15px;
-    max-width: 300px;
-    margin-bottom: 35px;
-    line-height: 1.6;
-}
-
-/* Decorative Dots */
-.dot {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-}
-.dot-blue {
-    width: 12px; height: 12px;
-    background-color: #3498db;
-    top: 180px; left: -20px;
-}
-.dot-orange {
-    width: 20px; height: 20px;
-    background-color: var(--primary-orange);
-    top: -30px; right: 80px;
-}
-.dot-green {
-    width: 10px; height: 10px;
-    background-color: #2ecc71;
-    bottom: 50px; right: 20%;
-}
-
-/* --- Hero Visual (Clean, No Background) --- */
-.hero-visual {
-    position: relative;
-    /* Increased height to make Africa map much bigger */
-    height: 650px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.single-image-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.single-image-container img {
-    /* Constrain image to container while preserving aspect ratio */
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-/* Optional: Slight hover effect */
-.single-image-container img:hover {
-    transform: scale(1.02);
-}
-
-/* Responsive adjustment */
-@media (max-width: 992px) {
-    .hero-visual { height: 500px; margin-top: 30px;}
-    .single-image-container img { width: 120%; height: 120%; }
-}
-/* --- Features Section --- */
-.features {
-    padding: 80px 0;
-    text-align: center;
-    background-color: #fff; /* or very faint grey */
-}
-
-.section-header .subtitle {
-    color: var(--primary-orange);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.section-header h2 {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-}
-
-.section-header p {
-    color: var(--text-grey);
-    font-size: 14px;
-    max-width: 500px;
-    margin: 0 auto 50px;
-    line-height: 1.6;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: #fff;
-    padding: 40px 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow */
-    transition: transform 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.icon-circle {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    color: var(--primary-orange);
-    border: 2px solid #fbe6d4; /* Light orange border */
-    border-radius: 50%;
-    position: relative;
-}
-
-/* Little offset background for icon (the style in image) */
-.icon-circle::after {
-    content: '';
-    position: absolute;
-    width: 100%; height: 100%;
-    background: #fbe6d4;
-    border-radius: 50%;
-    top: 3px; left: 3px;
-    z-index: -1;
-    opacity: 0.5;
-}
-
-.feature-card h3 {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
-.feature-card p {
-    font-size: 13px;
-    color: var(--text-grey);
-    line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-text h1 { font-size: 48px; }
-    .hero-text p { margin: 0 auto 30px; }
-    .nav-links, .phone-contact { display: none; } /* Simplified mobile nav */
-    .nav-toggle { display: block; }
-    .nav-links.mobile-open { display: flex; position: absolute; top: 72px; right: 20px; background: #fff; padding: 14px 18px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); flex-direction: column; gap: 12px; z-index: 999; }
-    .nav-links.mobile-open li a { text-transform: none; color: #333; }
-    .btn-primary { display: none; }
-    .masked-image-container { height: 350px; clip-path: circle(50% at 50% 50%); } /* Simple circle on mobile */
-}
-
+    @media (min-width: 900px) {
+        .mission-grid {
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .mission-header h2 {
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        
+        .mission-body {
+            padding-left: 40px;
+            border-left: 1px solid rgba(0,0,0,0.1);
+        }
+    }
     </style>
 </head>
-<body>
+<body class="home-page">
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
-                <p><i class="fa-solid fa-people-group"></i> Nissi Medical Outreach : <a href="#">BECOME A VOLUNTEER</a></p>
+                <p><i class="fa-solid fa-people-group"></i><a href="#">BECOME A VOLUNTEER</a></p>
             </div>
             <div class="tb-right">
                 <div class="info-item">
@@ -422,7 +163,7 @@ ul { list-style: none; }
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
-            <a href="contact.html" class="btn btn-primary">DONATE NOW</a>
+            <a href="contact.html" class="btn btn-orange">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -433,19 +174,19 @@ ul { list-style: none; }
         <div class="container hero-container">
             
             <div class="hero-text">
-                <h1>Justice <br>begins where <br>inequality <br>ends</h1>
+                <h1>Bringing <span class="highlight">Health & Hope</span> to communities <br>across <span class="highlight">Uganda</span></h1>
                 
                 <span class="dot dot-blue"></span>
                 <span class="dot dot-orange"></span>
 
-                <p>We're building a world where everyone has the power to shape their lives.</p>
+                <p>A Christ-centered initiative providing medical missions, preventive care, and community health education.</p>
                 
-                <a href="#" class="btn btn-black">DONATE NOW</a>
+                <a href="contact.html" class="btn btn-orange">DONATE NOW</a>
             </div>
 
            <div class="hero-visual">
                 <div class="single-image-container">
-                    <img src="images/Africa.webp" alt="Africa Charity Collage">
+                    <img src="images/Africa.png" alt="Africa Charity Collage">
                 </div>
                 
                 <span class="dot dot-green"></span>
@@ -453,34 +194,49 @@ ul { list-style: none; }
         </div>
     </header>
 
-    <section class="features">
+    <section class="mission-snapshot scroll-animate">
         <div class="container">
-            <div class="section-header">
+            <div class="mission-grid">
+                <div class="mission-header scroll-fade-left">
+                    <span class="mission-label">OUR MISSION</span>
+                    <h2>We provide Christ-centered medical outreach and compassionate healthcare to underserved communities in Uganda.</h2>
+                </div>
+                <div class="mission-body scroll-fade-right">
+                    <p>Nissi Medical Outreach runs regular medical clinics, basic clinical care, and preventive health education across rural and peri-urban districts. We work with local health workers to deliver practical, dignified care to people who lack reliable access to services.</p>
+                    <a href="about.html" class="mission-link">Learn more about us <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features scroll-animate">
+        <div class="container">
+            <div class="section-header scroll-scale">
                 <span class="subtitle">WHAT WE DO</span>
                 <h2>Transforming Lives Through Healthcare</h2>
-                <p>We serve with excellence, dignity, and love, reflecting the hope of Christ by addressing practical medical needs and promoting long-term wellbeing in Uganda's communities.</p>
+                <p>We serve with excellence, dignity, and love, reflecting the hope of Christ by addressing practical medical needs and promoting long-term wellbeing to communities across Uganda.</p>
             </div>
 
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="icon-circle"><i class="fa-solid fa-stethoscope"></i></div>
                     <h3>Medical Outreach</h3>
                     <p>Delivering compassionate medical care to underserved communities across Uganda with excellence and dignity.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="icon-circle"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>Health Education</h3>
                     <p>Equipping families with essential health knowledge and supporting vulnerable groups for long-term wellbeing.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="icon-circle"><i class="fa-solid fa-heart"></i></div>
                     <h3>Christ-Centered Care</h3>
                     <p>Reflecting the hope of Christ through healthcare ministry that serves with love, dignity, and compassion.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="icon-circle"><i class="fa-solid fa-hands-helping"></i></div>
                     <h3>Community Impact</h3>
                     <p>Building sustainable healthcare practices and partnerships with local healthcare workers across Uganda.</p>
@@ -488,6 +244,231 @@ ul { list-style: none; }
             </div>
         </div>
     </section>
+
+    <section class="home-impact">
+        <div class="container">
+            <div class="impact-wrapper">
+                <div class="impact-content impact-animate">
+                    <span class="subtitle">OUR IMPACT</span>
+                    <h2>Bringing Hope Where It's Needed Most</h2>
+                    <p>Every number represents a life touched, a family supported, and a community strengthened through Christ's love. Join us in our mission to provide accessible healthcare to the vulnerable.</p>
+                    <a href="missions.html" class="btn btn-orange">VIEW OUR MISSIONS</a>
+                </div>
+                <div class="impact-stats-grid">
+                    <div class="stat-box impact-animate">
+                        <h3 class="counter" data-target="50" data-suffix="+">0+</h3>
+                        <p>Medical Camps</p>
+                    </div>
+                    <div class="stat-box impact-animate">
+                        <h3 class="counter" data-target="10" data-suffix="k+">0k+</h3>
+                        <p>Patients Treated</p>
+                    </div>
+                    <div class="stat-box impact-animate">
+                        <h3 class="counter" data-target="25" data-suffix="+">0+</h3>
+                        <p>Communities</p>
+                    </div>
+                    <div class="stat-box impact-animate">
+                        <h3 class="counter" data-target="500" data-suffix="+">0+</h3>
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials animate-on-scroll">
+        <div class="container">
+            <div class="section-header animate-scale">
+                <span class="subtitle">TESTIMONIALS</span>
+                <h2>Stories of Change</h2>
+                <p>Hear from the communities we serve and the volunteers who make it possible.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"Nissi Medical Outreach brought hope to our village. The free medical camp helped my mother get the treatment she desperately needed."</p>
+                    <div class="author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah N.</h4>
+                            <span>Community Member</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"Volunteering with Nissi has been a life-changing experience. Seeing the smiles on patients' faces is the greatest reward."</p>
+                    <div class="author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Dr. John K.</h4>
+                            <span>Volunteer Doctor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"Their dedication to preventive care and health education is transforming how our youth approach their well-being."</p>
+                    <div class="author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Mary A.</h4>
+                            <span>Local Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transparency scroll-animate">
+        <div class="container">
+            <div class="transparency-content">
+                <h2>Transparency & Trust</h2>
+                <p class="transparency-intro">We believe in full accountability to our donors, partners, and the communities we serve.</p>
+                
+                <div class="trust-points">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="trust-text">
+                            <h3>Registered Nonprofit</h3>
+                            <p>Nissi Medical Outreach is a fully registered nonprofit organization operating in compliance with Ugandan laws.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="trust-text">
+                            <h3>Community Led</h3>
+                            <p>We are a community-based organization with local leadership and deep engagement in the areas we serve.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="trust-text">
+                            <h3>Financial Integrity</h3>
+                            <p>All donations and resources are used responsibly for medical outreach and community health programs.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="trust-text">
+                            <h3>Strategic Partnerships</h3>
+                            <p>We work in partnership with local health facilities, government agencies, and international supporters.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="commitment">"We are committed to integrity, accountability, and faithful stewardship of all resources entrusted to us."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-you-can-help scroll-animate">
+        <div class="container">
+            <div class="help-header">
+                <h2>How You Can Help</h2>
+            </div>
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Donate</h3>
+                    <p>Support medical camps and health programs that serve communities in need.</p>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon"><i class="fa-solid fa-hands-helping"></i></div>
+                    <h3>Volunteer</h3>
+                    <p>Join our medical teams and contribute your skills to community health initiatives.</p>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Partner with Us</h3>
+                    <p>Collaborate with us to expand healthcare access in underserved areas.</p>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon"><i class="fa-solid fa-praying-hands"></i></div>
+                    <h3>Pray with Us</h3>
+                    <p>Support our mission through prayer for our teams and the communities we serve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner scroll-animate">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="cta-text">
+                    <span class="cta-label">GET INVOLVED</span>
+                    <h2>Help us bring compassionate medical care to communities in need</h2>
+                    <p>Your support makes medical camps, health education, and life-saving treatments possible for thousands in Uganda.</p>
+                </div>
+                <div class="cta-action">
+                    <a href="contact.html" class="btn btn-orange">SUPPORT AN OUTREACH</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer scroll-animate">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section animate-fade-left">
+                <div class="footer-logo">
+                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <span>Nissi Medical Outreach</span>
+                </div>
+                <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section animate-fade-right">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a href="causes.html">Our Causes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section animate-fade-right">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Medical Outreach</a></li>
+                    <li><a href="#">Health Education</a></li>
+                    <li><a href="#">Youth Programs</a></li>
+                    <li><a href="#">Maternal Health</a></li>
+                    <li><a href="#">Community Care</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section animate-fade-right">
+                <h3>Contact Info</h3>
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+                    <p><i class="fa-solid fa-phone"></i> +256 782 862777</p>
+                    <p><i class="fa-regular fa-envelope"></i> info@nissimedicaloutreach.org</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
 const navToggle = document.getElementById('navToggle');
@@ -506,6 +487,55 @@ if (navToggle && navLinks) {
         }
     });
 }
+
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTop');
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Optimized Scroll Observer
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            const counter = entry.target.querySelector('.counter');
+            if (counter && !counter.classList.contains('counted')) {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix');
+                let current = 0;
+                const increment = target / 30;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.innerText = target + suffix;
+                        clearInterval(timer);
+                        counter.classList.add('counted');
+                    } else {
+                        counter.innerText = Math.ceil(current) + suffix;
+                    }
+                }, 50);
+            }
+            scrollObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.scroll-animate, .scroll-fade-left, .scroll-fade-right, .scroll-scale, .impact-animate').forEach(el => {
+    scrollObserver.observe(el);
+});
 </script>
 
 </body>

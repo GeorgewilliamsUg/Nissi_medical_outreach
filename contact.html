@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Nissi Medical Outreach</title>
     
-    <link rel="icon" type="image/png" href="images/ico1.png">
+    <link rel="icon" type="image/png" href="images/nissi.ico">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <div class="top-bar">
+ <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
                 <p><i class="fa-solid fa-people-group"></i> Nissi Medical Outreach : <a href="#">BECOME A VOLUNTEER</a></p>
@@ -36,20 +35,20 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="home.html" class="logo">
-                <img src="images/logo1.png" alt="Nissi Medical Outreach" class="logo-img">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
                 <span>Nissi Medical Outreach</span>
             </a>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html">Causes</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
-            <a href="contact.html" class="btn btn-primary">DONATE NOW</a>
+            <a href="contact.html" class="btn btn-orange">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -139,7 +138,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <img src="images/logo1.png" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
                     <span>Nissi Medical Outreach</span>
                 </div>
                 <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
@@ -189,6 +188,8 @@
     </div>
 </footer>
 
+<button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
 <script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -204,6 +205,22 @@ navToggle.addEventListener('click', () => {
         icon.classList.add('fa-bars');
     }
 });
+
+// Back to Top Button Logic
+const backToTopButton = document.getElementById('backToTop');
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 </script>
 
 </body>

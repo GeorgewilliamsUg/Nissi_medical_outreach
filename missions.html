@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <div class="top-bar">
+ <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
                 <p><i class="fa-solid fa-people-group"></i> Nissi Medical Outreach : <a href="#">BECOME A VOLUNTEER</a></p>
@@ -36,8 +35,8 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="home.html" class="logo">
-                <img src="images/logo1.png" alt="Nissi Medical Outreach" class="logo-img">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
                 <span>Nissi Medical Outreach</span>
             </a>
 
@@ -49,13 +48,12 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
-            <a href="contact.html" class="btn btn-primary">DONATE NOW</a>
+            <a href="contact.html" class="btn btn-orange">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
-
     <section class="events-hero">
         <div class="container">
             <h1>Our Events & Medical Missions</h1>
@@ -128,7 +126,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <img src="images/logo1.png" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
                     <span>Nissi Medical Outreach</span>
                 </div>
                 <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
@@ -178,6 +176,8 @@
     </div>
 </footer>
 
+<button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
 <script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -193,6 +193,22 @@ navToggle.addEventListener('click', () => {
         icon.classList.add('fa-bars');
     }
 });
+
+// Back to Top Button Logic
+const backToTopButton = document.getElementById('backToTop');
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 </script>
 
 </body>
