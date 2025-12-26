@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Nissi Medical Outreach</title>
+    
+    <meta name="description" content="Support Nissi Medical Outreach. Your donation helps provide medical care, health education, and hope to underserved communities in Uganda.">
+    
+    <link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles moved to styles.css -->
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="tb-left">
+                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html" class="tb-cta-link">Become a Volunteer</a></p>
+            </div>
+            <div class="tb-right">
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope"></i> <span>nissimedicaloutreach@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i> <span>+256 782 862777</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
+                <span>Nissi Medical Outreach</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="missions.html">Missions</a></li>
+                <li><a href="causes.html">Causes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="donate-hero">
+        <div class="container">
+            <h1>Support Our Mission</h1>
+            <p>Your generosity brings hope, healing, and essential healthcare to communities in need.</p>
+        </div>
+    </header>
+
+    <section class="donate-section">
+        <div class="container">
+            <div class="donate-container">
+                <form id="donationForm">
+                    <h3 class="section-title">1. Choose Donation Amount</h3>
+                    <div class="amount-grid">
+                        <div class="amount-btn" data-amount="10">$10</div>
+                        <div class="amount-btn active" data-amount="25">$25</div>
+                        <div class="amount-btn" data-amount="50">$50</div>
+                        <div class="amount-btn" data-amount="100">$100</div>
+                        <div class="amount-btn" data-amount="250">$250</div>
+                        <div class="amount-btn" data-amount="custom">Custom</div>
+                    </div>
+                    <div class="custom-amount" id="customAmountWrapper" style="display: none;">
+                        <input type="number" placeholder="Enter custom amount (USD)">
+                    </div>
+
+                    <h3 class="section-title">2. Select Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Credit / Debit Card</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fa-brands fa-paypal"></i>
+                            <span>PayPal</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <span>Mobile Money</span>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title">3. Your Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+
+                    <button type="submit" class="donate-btn">COMPLETE DONATION</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                        <span>Nissi Medical Outreach</span>
+                    </div>
+                    <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+                        <p><i class="fa-solid fa-phone"></i> +256 782 862777</p>
+                        <p><i class="fa-regular fa-envelope"></i> nissimedicaloutreach@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
