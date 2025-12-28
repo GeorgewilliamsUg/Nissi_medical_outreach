@@ -158,4 +158,54 @@ document.querySelectorAll('.event-card').forEach(card => {
     });
 });
 
+// Add this to your main JS file
+document.addEventListener('DOMContentLoaded', () => {
+    // Select both possible forms
+    const forms = [
+        { id: '#nissi-contact-form', statusId: '#form-status' },
+        { id: '#nissi-volunteer-form', statusId: '#volunteer-status' }
+    ];
+
+    forms.forEach(formSetup => {
+        const form = document.querySelector(formSetup.id);
+        const statusBox = document.querySelector(formSetup.statusId);
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalText = btn.innerText;
+
+                // Loading State
+                btn.innerText = 'PROCESSING...';
+                btn.disabled = true;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    });
+
+                    if (response.ok) {
+                        statusBox.style.display = 'block';
+                        statusBox.style.backgroundColor = '#ecfdf5';
+                        statusBox.style.color = '#059669';
+                        statusBox.innerHTML = 'Thank you! Your application has been received.';
+                        form.reset();
+                    } else {
+                        throw new Error();
+                    }
+                } catch (err) {
+                    statusBox.style.display = 'block';
+                    statusBox.style.backgroundColor = '#fef2f2';
+                    statusBox.style.color = '#dc2626';
+                    statusBox.innerHTML = 'Submission failed. Please check your connection and try again.';
+                } finally {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            });
+        }
+    });
+});
 // End of main.js
