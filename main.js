@@ -158,54 +158,30 @@ document.querySelectorAll('.event-card').forEach(card => {
     });
 });
 
-// Add this to your main JS file
-document.addEventListener('DOMContentLoaded', () => {
-    // Select both possible forms
-    const forms = [
-        { id: '#nissi-contact-form', statusId: '#form-status' },
-        { id: '#nissi-volunteer-form', statusId: '#volunteer-status' }
-    ];
 
-    forms.forEach(formSetup => {
-        const form = document.querySelector(formSetup.id);
-        const statusBox = document.querySelector(formSetup.statusId);
+document.querySelectorAll('.nissi-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const status = form.querySelector('.status-msg');
+        const btn = form.querySelector('button');
+        
+        btn.disabled = true;
+        btn.innerText = "Sending...";
 
-        if (form) {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const btn = form.querySelector('button');
-                const originalText = btn.innerText;
-
-                // Loading State
-                btn.innerText = 'PROCESSING...';
-                btn.disabled = true;
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form)
-                    });
-
-                    if (response.ok) {
-                        statusBox.style.display = 'block';
-                        statusBox.style.backgroundColor = '#ecfdf5';
-                        statusBox.style.color = '#059669';
-                        statusBox.innerHTML = 'Thank you! Your application has been received.';
-                        form.reset();
-                    } else {
-                        throw new Error();
-                    }
-                } catch (err) {
-                    statusBox.style.display = 'block';
-                    statusBox.style.backgroundColor = '#fef2f2';
-                    statusBox.style.color = '#dc2626';
-                    statusBox.innerHTML = 'Submission failed. Please check your connection and try again.';
-                } finally {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }
-            });
+        try {
+            await fetch(form.action, { method: 'POST', body: new FormData(form)});
+            status.style.display = "block";
+            status.style.background = "#d4edda";
+            status.innerText = "Thank you! We have received your message.";
+            form.reset();
+        } catch (err) {
+            status.style.display = "block";
+            status.style.background = "#f8d7da";
+            status.innerText = "Error sending message. Please try again.";
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "Submit";
         }
     });
 });
-// End of main.js
+
