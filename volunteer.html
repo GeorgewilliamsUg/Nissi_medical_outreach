@@ -27,7 +27,7 @@
             </div>
             <div class="tb-right">
                 <div class="info-item">
-                    <i class="fa-regular fa-envelope"></i> <span>info@nissimedicaloutreach.org</span>
+                    <i class="fa-regular fa-envelope"></i> <span>nissimedicaloutreach@gmail.com</span>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i> <span>+256 782 862777</span>
@@ -86,20 +86,32 @@
                     <input type="hidden" name="source" value="Volunteer Application">
                     <input type="hidden" name="honeypot" style="display:none">
                     <div class="form-grid">
-                        <input type="text" name="first_name" placeholder="First Name" required>
-                        <input type="text" name="last_name" placeholder="Last Name" required>
+                        <div class="form-group">
+                            <input type="text" name="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name" placeholder="Last Name" required>
+                        </div>
                     </div>
                     <div class="form-grid">
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="tel" name="phone" placeholder="Phone Number">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                        </div>
                     </div>
-                    <select name="interest" required>
-                        <option value="">Select Interest</option>
-                        <option value="Medical">Medical Professional</option>
-                        <option value="General">General Support</option>
-                    </select>
-                    <textarea name="message" placeholder="Skills/Experience" rows="4"></textarea>
-                    <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+                    <div class="form-group">
+                        <select name="interest" required>
+                            <option value="">Select Interest</option>
+                            <option value="Medical">Medical Professional</option>
+                            <option value="General">General Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Skills/Experience" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="contact-btn">SUBMIT APPLICATION</button>
                     <div class="status-msg" style="display:none; margin-top:10px; padding:10px; border-radius:5px;">
                     </div>
                 </form>
@@ -142,7 +154,7 @@
                     <div class="footer-contact">
                         <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
                         <p><i class="fa-solid fa-phone"></i> +256 782 862777</p>
-                        <p><i class="fa-regular fa-envelope"></i> info@nissimedicaloutreach.org</p>
+                        <p><i class="fa-regular fa-envelope"></i> nissimedicaloutreach@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -151,6 +163,10 @@
             </div>
         </div>
     </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="main.js" defer></script>
 </body>
 
 </html>
