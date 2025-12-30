@@ -185,3 +185,35 @@ document.querySelectorAll('.nissi-form').forEach(form => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all elements that need decoding
+    const encodedElements = document.querySelectorAll(".decode-contact");
+
+    encodedElements.forEach(el => {
+        try {
+            // Decode the Base64 string
+            const decoded = atob(el.dataset.encoded);
+            
+            // If it's a link (like an email or phone), update the href too
+            if (el.tagName === 'A') {
+                if (el.dataset.type === 'whatsapp') {
+                    el.href = 'https://wa.me/' + decoded.replace(/\D/g, '');
+                    return; // Don't overwrite content (icon) for WhatsApp links
+                } else if (decoded.includes('@')) {
+                    el.href = 'mailto:' + decoded;
+                } else {
+                    el.href = 'tel:' + decoded.replace(/\s/g, '');
+                }
+            }
+            el.textContent = decoded;
+        } catch (e) {
+            console.error("Decoding error:", e);
+        }
+    });
+});
+
+// For your form success message
+function showThankYou() {
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+}
