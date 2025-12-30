@@ -321,7 +321,7 @@
                 </div>
                 <form
                     id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSe7hv2ZKMQjIQ9dbNpjSlenFY60832Vn673cH66UaNl_isuIw/formResponse"
-                    method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                    method="POST">
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -354,15 +354,40 @@
                     <a href="index.html" class="success-btn">Return to Home</a>
                 </div>
 
-                <script type="text/javascript">var submitted = false;</script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                    onload="if(submitted) { showSuccess(); }"></iframe>
-
                 <script>
-                    function showSuccess() {
-                        document.getElementById('contact-form').style.display = 'none';
-                        document.getElementById('thank-you-msg').style.display = 'block';
-                    }
+                    document.getElementById('contact-form').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const form = this;
+                        const submitBtn = form.querySelector('button[type="submit"]');
+                        const originalBtnText = submitBtn.innerText;
+                        
+                        // Show loading state
+                        submitBtn.disabled = true;
+                        submitBtn.innerText = "SENDING...";
+                        submitBtn.style.opacity = "0.7";
+                        submitBtn.style.cursor = "not-allowed";
+                        
+                        const formData = new FormData(form);
+                        
+                        fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors'
+                        })
+                        .then(() => {
+                            document.getElementById('contact-form').style.display = 'none';
+                            document.getElementById('thank-you-msg').style.display = 'block';
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            alert('Something went wrong. Please try again.');
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = originalBtnText;
+                            submitBtn.style.opacity = "1";
+                            submitBtn.style.cursor = "pointer";
+                        });
+                    });
                 </script>
 
 
