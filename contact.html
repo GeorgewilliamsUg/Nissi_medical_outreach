@@ -140,12 +140,35 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
+            border: 2px solid #e67e22;
+            cursor: pointer;
         }
 
         .success-btn:hover {
             background-color: #d35400;
+            border-color: #d35400;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+        }
+
+        .success-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .success-btn.outline {
+            background-color: transparent;
+            color: #e67e22;
+            box-shadow: none;
+        }
+
+        .success-btn.outline:hover {
+            background-color: #e67e22;
+            color: white;
+            border-color: #e67e22;
         }
 
         @keyframes fadeIn {
@@ -351,8 +374,10 @@
                     </div>
                     <h3 class="success-title">Message Sent!</h3>
                     <p class="success-text">Thank you for contacting Nissi Medical Outreach. We have received your message and will get back to you shortly.</p>
-                    <a href="index.html" class="success-btn">Return to Home</a>
-                    <button type="button" id="reset-btn" class="success-btn" style="background-color: white; color: #e67e22; border: 2px solid #e67e22; margin-left: 10px; cursor: pointer;">Send Another</button>
+                    <div class="success-actions">
+                        <a href="index.html" class="success-btn">Return to Home</a>
+                        <button type="button" id="reset-btn" class="success-btn outline">Send Another</button>
+                    </div>
                 </div>
 
                 <script>
