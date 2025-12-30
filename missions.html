@@ -25,6 +25,36 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Email Tooltip Styles */
+        [data-type="email-icon"] {
+            position: relative;
+        }
+        [data-type="email-icon"]::after {
+            content: attr(data-email);
+            position: absolute;
+            top: 140%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        [data-type="email-icon"]:hover::after {
+            opacity: 1;
+            visibility: visible;
+            top: 120%;
+        }
+    </style>
     <script type="application/ld+json">
     [
       {
@@ -177,8 +207,8 @@
             </div>
             <div class="tb-right">
                 <div class="info-item">
-                    <i class="fa-regular fa-envelope"></i> <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t">
-                        [Loading...]
+                    <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t" data-type="email-icon" aria-label="Send Email" title="Send Email">
+                        <i class="fa-regular fa-envelope"></i>
                     </a>
                 </div>
                 <div class="info-item">

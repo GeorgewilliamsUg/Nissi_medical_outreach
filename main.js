@@ -199,6 +199,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (el.dataset.type === 'whatsapp') {
                     el.href = 'https://wa.me/' + decoded.replace(/\D/g, '');
                     return; // Don't overwrite content (icon) for WhatsApp links
+                } else if (el.dataset.type === 'email-icon') {
+                    el.href = 'mailto:' + decoded;
+                    el.setAttribute('data-email', decoded);
+                    return; // Don't overwrite content (icon) for Email links
                 } else if (decoded.includes('@')) {
                     el.href = 'mailto:' + decoded;
                 } else {
