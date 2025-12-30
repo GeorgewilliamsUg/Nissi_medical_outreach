@@ -89,6 +89,40 @@
             }
         }
 
+        /* Floating Label Styles */
+        .floating-group {
+            position: relative;
+        }
+        
+        .floating-group label {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #888;
+            pointer-events: none;
+            transition: 0.2s ease all;
+            background-color: transparent;
+        }
+
+        .floating-group input:focus ~ label,
+        .floating-group input:not(:placeholder-shown) ~ label,
+        .floating-group textarea:focus ~ label,
+        .floating-group textarea:not(:placeholder-shown) ~ label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 0 5px;
+            color: #e67e22;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .floating-group input:not(:placeholder-shown),
+        .floating-group textarea:not(:placeholder-shown) {
+            background-color: #fff;
+        }
+
         /* Success Message Card Styles */
         #thank-you-msg {
             text-align: center;
@@ -347,20 +381,24 @@
                     method="POST">
                     
                     <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" name="entry.2019880241" placeholder="Full Name" required>
+                        <div class="form-group floating-group">
+                            <input type="text" name="entry.2019880241" id="fullName" placeholder=" " required>
+                            <label for="fullName">Full Name</label>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="entry.975010808" placeholder="Email Address" required>
+                        <div class="form-group floating-group">
+                            <input type="email" name="entry.975010808" id="emailAddress" placeholder=" " required>
+                            <label for="emailAddress">Email Address</label>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <input type="text" name="entry.125954066" placeholder="Subject">
+                    <div class="form-group floating-group">
+                        <input type="text" name="entry.125954066" id="subject" placeholder=" ">
+                        <label for="subject">Subject</label>
                     </div>
                     
-                    <div class="form-group">
-                        <textarea name="entry.773974699" placeholder="Your Message" required></textarea>
+                    <div class="form-group floating-group">
+                        <textarea name="entry.773974699" id="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
                     </div>
 
                     <button type="submit">SEND MESSAGE</button>
