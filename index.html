@@ -87,6 +87,21 @@
             visibility: visible;
             top: 120%;
         }
+
+        /* Hero CTA Button Enhancements */
+        .hero-cta {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-cta:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -166,14 +181,14 @@
         <div class="container hero-container">
             
             <div class="hero-text">
-                <h1>Bringing <span class="highlight">Health & Hope</span> to communities <br>across <span class="highlight">Uganda</span></h1>
+                <h1>Providing <span class="highlight">Life-Saving Medical Care</span> to Vulnerable Communities in <span class="highlight">Uganda</span></h1>
                 
                 <span class="dot dot-blue"></span>
                 <span class="dot dot-orange"></span>
 
-                <p>A Christ-centered initiative providing medical missions, preventive care, and community health education.</p>
+                <p>We deliver free medical treatment, preventive health education, and Christ-centered care to families with limited access to healthcare.</p>
                 
-                <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+                <a href="donate.html" class="btn btn-orange hero-cta">DONATE NOW <i class="fa-solid fa-heart"></i></a>
             </div>
 
            <div class="hero-visual">
@@ -473,14 +488,12 @@
             </div>
             
             <div class="footer-section scroll-fade-right">
-                <h3>Our Services</h3>
-                <ul>
-                    <li><a href="#">Medical Outreach</a></li>
-                    <li><a href="#">Health Education</a></li>
-                    <li><a href="#">Youth Programs</a></li>
-                    <li><a href="#">Maternal Health</a></li>
-                    <li><a href="#">Community Care</a></li>
-                </ul>
+                <h3>Stay Updated</h3>
+                <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
+                    <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                </form>
             </div>
             
             <div class="footer-section scroll-fade-right">

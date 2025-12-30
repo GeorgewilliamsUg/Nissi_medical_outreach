@@ -2967,6 +2967,20 @@ ul { list-style: none; }
     }
 }
 
+.mission-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease; /* Smooth movement */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+    border-color: #991b1b; /* Nissi Crimson */
+}
 /* Feature Grid Styles */
 .features-grid-container {
     display: grid;
@@ -3600,6 +3614,31 @@ h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5re
     .event-details { padding: 25px; }
 }
 
+/* --- Partners Grid Styles --- */
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.partner-item {
+    font-size: 1.5rem;
+    color: var(--text-grey);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+}
+
+.partner-item:hover {
+    color: var(--primary-orange);
+    transform: translateY(-3px);
+}
 /* --- New Missions Page Enhancements --- */
 
 .hero-subtitle {
