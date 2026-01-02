@@ -9,7 +9,7 @@
     
     <style>
         :root {
-            --nissi-crimson: orange;
+            --nissi-crimson: #ea580c; /* Adjusted to a professional orange-red */
             --nissi-orange: #532606;
             --text-dark: #111c2c;
         }
@@ -21,7 +21,6 @@
             padding: 20px;
         }
 
-        /* Controls for the user (hidden in PDF) */
         .controls {
             max-width: 800px;
             margin: 0 auto 20px;
@@ -30,265 +29,275 @@
             align-items: center;
         }
 
-        /* The PDF Container */
         #pdf-content {
-            width: 210mm; /* A4 Width */
+            width: 210mm; 
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             color: var(--text-dark);
         }
 
-        /* Report Header */
+        /* Fixed Header stretching */
         .report-header {
-            background: linear-gradient(rgba(90, 4, 4, 0.5), rgba(107, 20, 5, 0.65)), url('images/13.webp');
-            background-size: cover;
-            background-position: center;
+            background-color: #6b1405;
             color: white;
-            padding: 50px;
+            padding: 60px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .report-header img { width: 80px; margin-bottom: 15px; }
+        .report-header img.logo-icon { width: 80px; margin-bottom: 15px; position: relative; z-index: 2; }
 
-        /* Story Layout (Single Column for Stability) */
+        /* Story Layout */
         .story-section {
             padding: 40px;
-            border-bottom: 1px solid #490808;
-            page-break-inside: avoid; /* Prevents splitting stories */
+            border-bottom: 1px solid #eee;
+            page-break-inside: avoid;
         }
 
-        .story-image {
+        .new-page { page-break-before: always !important; }
+
+        /* FIX: Using object-fit instead of background-image to prevent stretching */
+        .image-container {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            height: 350px; /* Consistent height */
+            overflow: hidden;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This keeps the aspect ratio perfect */
+            display: block;
         }
 
         .tag {
-            color: var(--nissi-orange);
+            color: var(--nissi-crimson);
             font-weight: 700;
             text-transform: uppercase;
             font-size: 12px;
             letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        h2 { font-family: 'Outfit', sans-serif; color: var(--nissi-crimson); margin: 10px 0; }
-        p { line-height: 1.6; color: #4b5563; }
+        h2.section-title { 
+            font-family: 'Outfit', sans-serif; 
+            color: #6b1405; 
+            margin: 10px 0 20px;
+            border-left: 5px solid var(--nissi-crimson);
+            padding-left: 15px;
+        }
+
+        p { line-height: 1.7; color: #374151; font-size: 15px; }
 
         .impact-stats {
             display: flex;
             justify-content: space-around;
             background: #fff7ed;
             padding: 30px;
-            margin: 20px 40px;
+            margin: 30px 0;
             border-radius: 12px;
-            text-align: center;
         }
 
-        .stat-box b { display: block; font-size: 24px; color: var(--nissi-orange); }
+        .stat-box b { display: block; font-size: 28px; color: var(--nissi-crimson); }
+
+        .bible-verse {
+            background: #fdf2f2;
+            border-radius: 8px;
+            padding: 25px;
+            font-style: italic;
+            color: #6b1405;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #fecaca;
+        }
 
         .report-footer {
-            padding: 30px;
+            padding: 40px;
             background: #f9fafb;
             text-align: center;
-            font-size: 12px;
-            color: #9ca3af;
+            font-size: 13px;
+            color: #6b7280;
         }
 
-        /* PDF Specific Overrides */
         @media print {
             body { background: white; padding: 0; }
-            #pdf-content { box-shadow: none; width: 100%; }
+            #pdf-content { width: 100%; box-shadow: none; }
             .controls { display: none; }
+            /* Ensure background images print */
+            .story-image {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="controls">
-        <a href="newsletter.html" style="text-decoration: none; color: #666;">← Back to Site</a>
-        <button id="downloadBtn" style="background: #ea580c; color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: bold;">
-            DOWNLOAD AS PDF
+        <a href="newsletter.html" style="text-decoration: none; color: #666; font-weight: 500;">← Back to Newsletter</a>
+        <button id="downloadBtn" style="background: #ea580c; color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            DOWNLOAD PDF REPORT
         </button>
     </div>
 
-    <style>
-    /* Add this to your existing styles */
-    .new-page {
-        page-break-before: always !important;
-    }
-    
-    .intro-text {
-        font-size: 18px;
-        line-height: 1.8;
-        color: #410202;
-        margin-bottom: 40px;
-    }
-    
-    .section-title {
-        border-left: 5px solid var(--nissi-orange);
-        padding-left: 15px;
-        margin-bottom: 25px;
-    }
+    <div id="pdf-content">
+        <header class="report-header">
+            <img src="images/logo.webp" alt="Logo" class="logo-icon">
+            <h1 style="margin: 0; font-family: 'Outfit'; font-size: 48px; letter-spacing: -1px;">2024 IMPACT REPORT</h1>
+            <p style="font-size: 1.3rem; color: #fdba74; margin-top: 10px; font-weight: 500;">Healing Hands, Hopeful Hearts</p>
+        </header>
 
-    .bible-verse {
-        background: #b97a04;
-        border-radius: 8px;
-        padding: 20px;
-        font-style: italic;
-        color: var(--nissi-crimson);
-        margin: 20px 0;
-        text-align: center;
-    }
-</style>
-
-<div id="pdf-content">
-    <header class="report-header">
-        <img src="images/logo.webp" alt="Logo">
-        <h1 style="margin: 0; font-family: 'Outfit'; font-size: 42px;">2024 IMPACT REPORT</h1>
-        <p style="font-size: 1.2rem; color: orange;">Nissi Medical Outreach: Healing Hands, Hopeful Hearts</p>
-    </header>
-
-    <section class="story-section">
-        <h2 class="section-title">A Message of Stewardship</h2>
-        <p class="intro-text">
-            In 2024, Nissi Medical Outreach remained committed to the biblical mandate of caring for the "least of these." We recognize that medical care is often the first step in restoring dignity and hope to a community. This year, through the grace of God and the generosity of our partners, we expanded our footprint into some of the most remote regions of Uganda, ensuring that geography is never a barrier to life-saving healthcare.
-        </p>
-        <div class="bible-verse">
-            "And He sent them out to proclaim the kingdom of God and to heal the sick." — Luke 9:2
-        </div>
-        <div class="impact-stats">
-            <div class="stat-box"><b>1200+</b> Patients Treated</div>
-            <div class="stat-box"><b>200+</b> Children Immunized</div>
-            <div class="stat-box"><b>459</b> Lives Touched in Gingo</div>
-        </div>
-    </section>
-
-    <section class="story-section new-page">
-        <img src="images/14.webp" class="story-image" alt="Gulu Outreach">
-        <span class="tag">Medical Mission</span>
-        <h2 class="section-title">Restoring Hope in Northern Uganda: The Gulu Mission</h2>
-        <p>
-            In partnership with Next Generation Ministries and Dr. Rebecca Hunter, our team embarked on a four-day intensive medical mission to the remote villages of Gulu District. The post-conflict landscape of Northern Uganda still presents significant challenges to healthcare infrastructure, leaving many families days away from the nearest clinic.
-        </p>
-        <p>
-            Our team provided a comprehensive range of services, including general consultations, laboratory testing for malaria and typhoid, and basic surgical procedures. Beyond the medicine, our volunteers from Sozo Dream Foundation and Hummingbird Foundation engaged in community counseling and spiritual outreach, ensuring that we treated the whole person—body and soul.
-        </p>
-        <p>
-            <strong>Key Outcome:</strong> Over 1,200 residents received direct medical intervention, and 150 local leaders were trained in basic first aid and hygiene protocols.
-        </p>
-    </section>
-
-    <section class="story-section new-page">
-        <img src="images/5.webp" class="story-image" alt="Menstrual Health">
-        <span class="tag">Empowerment & Education</span>
-        <h2 class="section-title">The Namutumba Project: Dignity Through Menstrual Health</h2>
-        <p>
-            In the Namutumba District, we addressed a silent barrier to education: Period Poverty. Statistics show that adolescent girls in rural Uganda miss up to 20% of the school year due to a lack of sanitary supplies.
-        </p>
-        <p>
-            Led by our dedicated team members Sylivia and Betty, we conducted an interactive workshop focusing on the production of reusable sanitary pads. We don't just provide supplies; we provide skills. By teaching young women how to manufacture their own hygienic solutions from locally sourced flannel, we ensure the sustainability of the project.
-        </p>
-        <p>
-            <strong>Impact:</strong> 300 girls at Cetkana Primary School received menstrual hygiene kits and training, significantly reducing absenteeism and fostering a culture of health and openness.
-        </p>
-    </section>
-
-    <section class="story-section new-page">
-        <img src="images/6.webp" class="story-image" alt="Gingo Village">
-        <span class="tag">Community Health Camp</span>
-        <h2 class="section-title">Gingo Village: Addressing the Non-Communicable Disease Crisis</h2>
-        <p>
-            Our outreach to Gingo Village in Mityana District revealed a staggering need for chronic disease management. In a single day, we served 459 citizens, many of whom were unaware they were living with high blood pressure or vision impairments.
-        </p>
-        <p>
-            Through our partnership with Live in Light Ministries, we distributed hundreds of pairs of prescription eyeglasses, instantly restoring the ability for elders to read Scripture and for workers to return to their trades. We also integrated HIV testing and dental care, providing a "one-stop" health sanctuary for the village.
-        </p>
-        <p>
-            <strong>The Result:</strong> 459 citizens screened; 120 pairs of eyeglasses distributed; 100% of patients received free medication and lifestyle counseling for hypertension and diabetes.
-        </p>
-    </section>
-
-    <section class="story-section new-page" style="text-align: center; background: #fffcf9;">
-        <h2 style="color: var(--nissi-crimson);">Partner With Us in 2025</h2>
-        <p class="intro-text">
-            The stories shared in this report are only possible because of partners like you. As we look toward 2025, our goal is to purchase a dedicated mobile clinic vehicle to reach even deeper into the "last-mile" communities of Uganda.
-        </p>
-        <div style="margin: 40px 0;">
-            <p><strong>Ways to Give:</strong></p>
+        <section class="story-section">
+            <h2 class="section-title">A Message of Stewardship</h2>
+            <p>
+                In 2024, Nissi Medical Outreach remained committed to the biblical mandate of caring for the "least of these." We recognize that medical care is often the first step in restoring dignity and hope to a community. This year, we expanded our footprint into some of the most remote regions of Uganda, ensuring that geography is never a barrier to life-saving healthcare.
+            </p>
             
-            <div style="margin: 25px 0; padding: 15px; background: white; display: inline-block; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                <div id="donate-qr" style="width: 120px; height: 120px; margin: 0 auto;"></div>
-                <p style="margin: 8px 0 0; font-weight: 700; color: var(--nissi-orange); font-size: 13px; letter-spacing: 0.5px;">SCAN TO DONATE</p>
+            <div class="impact-stats">
+                <div class="stat-box"><b>1,200+</b> Patients Treated</div>
+                <div class="stat-box"><b>200+</b> Children Immunized</div>
+                <div class="stat-box"><b>459</b> Gingo Citizens</div>
             </div>
 
-            <p>Bank Transfer: [Your Bank Details Here]</p>
-            <p>Mobile Money: [Your Number Here]</p>
-        </div>
-        <div class="bible-verse">
-            "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up." — Galatians 6:9
-        </div>
-    </section>
+            <div class="bible-verse">
+                "And He sent them out to proclaim the kingdom of God and to heal the sick." <br><strong>— Luke 9:2</strong>
+            </div>
+        </section>
 
-    <footer class="report-footer">
-        <p><b>Nissi Medical Outreach</b><br>
-        Kampala, Uganda | nissimedicaloutreach@gmail.com | +256 782 862777</p>
-        <p>© 2025 Impact Report. All Rights Reserved.</p>
-    </footer>
-</div>
+        <section class="story-section new-page">
+            <div class="image-container">
+                <img src="images/14.webp" alt="Gulu Outreach">
+            </div>
+            <span class="tag">Medical Mission</span>
+            <h2 class="section-title">Restoring Hope in Northern Uganda: The Gulu Mission</h2>
+            <p>
+                In partnership with Next Generation Ministries, our team embarked on a four-day intensive medical mission to the remote villages of Gulu District. Our team provided services including general consultations, laboratory testing for malaria, and basic surgical procedures. Beyond medicine, we engaged in spiritual outreach, treating the whole person—body and soul.
+            </p>
+            <p>
+                <strong>Key Outcome:</strong> Over 1,200 residents received direct medical intervention, and local leaders were trained in basic first aid protocols to ensure long-term community resilience.
+            </p>
+        </section>
+
+        <section class="story-section new-page">
+            <div class="image-container">
+                <img src="images/5.webp" alt="Menstrual Health">
+            </div>
+            <span class="tag">Empowerment & Education</span>
+            <h2 class="section-title">The Namutumba Project: Dignity Through Hygiene</h2>
+            <p>
+                We addressed the silent barrier of "Period Poverty" in Namutumba. By teaching young women how to manufacture their own reusable hygienic solutions from locally sourced flannel, we ensure the sustainability of the project and keep girls in school.
+            </p>
+            <p>
+                <strong>Impact:</strong> 300 girls at Cetkana Primary School received menstrual hygiene kits and training, significantly reducing absenteeism and fostering a culture of health and openness.
+            </p>
+        </section>
+
+        <section class="story-section new-page">
+            <div class="image-container">
+                <img src="images/6.webp" alt="Gingo Village">
+            </div>
+            <span class="tag">Community Health Camp</span>
+            <h2 class="section-title">Gingo Village: Addressing Chronic Disease</h2>
+            <p>
+                In a single day in Mityana District, we served 459 citizens. Through our partnership with Live in Light Ministries, we distributed hundreds of pairs of prescription eyeglasses and provided screening for hypertension and diabetes.
+            </p>
+            <p>
+                <strong>The Result:</strong> 120 pairs of eyeglasses distributed; 100% of patients received free medication and lifestyle counseling for non-communicable diseases.
+            </p>
+        </section>
+
+        <section class="story-section new-page" style="text-align: center; background: #fffcf9;">
+            <h2 style="color: #6b1405; font-family: 'Outfit'; font-size: 32px;">Partner With Us in 2025</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px;">
+                Your support drives this mission. Help us reach the "last-mile" communities with a dedicated mobile clinic vehicle in the coming year.
+            </p>
+            
+            <div style="margin: 40px 0; padding: 30px; background: white; display: inline-block; border-radius: 16px; border: 1px solid #eee; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                <div id="donate-qr" style="margin: 0 auto;"></div>
+                <p style="margin: 15px 0 0; font-weight: 700; color: #ea580c; font-size: 14px; letter-spacing: 1px;">SCAN TO DONATE</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <p><strong>Bank:</strong> [Insert Bank] | <strong>Account:</strong> [Insert No.]</p>
+                <p><strong>Mobile Money:</strong> +256 782 862777</p>
+            </div>
+            
+            <div class="bible-verse" style="background: transparent; border: none;">
+                "Let us not become weary in doing good..." <br><strong>— Galatians 6:9</strong>
+            </div>
+        </section>
+
+        <footer class="report-footer">
+            <p><b>Nissi Medical Outreach</b><br>
+            Kampala, Uganda | nissimedicaloutreach@gmail.com</p>
+            <p>© 2025 Impact Report. All Rights Reserved.</p>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate QR Code locally to avoid CORS/Taint issues
+            // QR Code Generation
             new QRCode(document.getElementById("donate-qr"), {
                 text: "https://nissimedicaloutreach.org/donate.html",
-                width: 120,
-                height: 120,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
+                width: 140,
+                height: 140
             });
 
-            document.getElementById('downloadBtn').addEventListener('click', function() {
-                if (window.location.protocol === 'file:') {
-                    if (!confirm('Security Warning: You are opening this file directly (file://). Browser security blocks PDF generation for local images. For the best experience, use a local server.\n\nDo you want to try generating anyway?')) {
-                        return;
-                    }
-                }
+            let isGenerating = false;
+
+            function generatePDF() {
+                if (isGenerating) return;
+                isGenerating = true;
+
+                // Ensure we are at the top of the page for better rendering context
+                window.scrollTo(0, 0);
 
                 const element = document.getElementById('pdf-content');
-                const btn = this;
-                const originalText = btn.innerText;
-                
-                btn.innerText = 'Generating PDF...';
+                const btn = document.getElementById('downloadBtn');
+                btn.innerText = 'PREPARING PDF...';
                 btn.disabled = true;
-                btn.style.opacity = '0.7';
-                btn.style.cursor = 'wait';
 
                 const opt = {
-                    margin: [10, 10],
+                    margin: [5, 0, 5, 0], // Small margin to prevent cutting
                     filename: 'Nissi_Impact_Report_2024.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2, useCORS: true, logging: false },
+                    html2canvas: { 
+                        scale: 2, 
+                        useCORS: true, 
+                        letterRendering: true
+                    },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                     pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
                 };
 
-                html2pdf().set(opt).from(element).save().then(function() {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                    btn.style.cursor = 'pointer';
-                }).catch(function(err) {
-                    console.error('PDF Generation Error:', err);
-                    alert('Error generating PDF: ' + (err.message || err) + '\n\nNote: "Tainted canvas" errors are caused by opening files directly without a server.');
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                    btn.style.cursor = 'pointer';
-                });
+                // Small delay to allow UI to update and scroll to complete
+                setTimeout(() => {
+                    html2pdf().set(opt).from(element).save().then(() => {
+                        btn.innerText = 'DOWNLOAD AS PDF';
+                        btn.disabled = false;
+                        isGenerating = false;
+                    }).catch(err => {
+                        console.error('PDF Generation Error:', err);
+                        btn.innerText = 'RETRY DOWNLOAD';
+                        btn.disabled = false;
+                        isGenerating = false;
+                        if (confirm("PDF generation failed due to local file security restrictions.\n\nWould you like to use the browser's native 'Save as PDF' feature instead?")) {
+                            window.print();
+                        }
+                    });
+                }, 100);
+            }
+
+            // Manual trigger
+            document.getElementById('downloadBtn').addEventListener('click', generatePDF);
+
+            // Auto trigger: Wait for all resources (images) to load
+            window.addEventListener('load', function() {
+                setTimeout(generatePDF, 1000);
             });
         });
     </script>

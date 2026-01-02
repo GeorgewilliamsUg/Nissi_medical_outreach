@@ -853,7 +853,7 @@ ul {
 .features {
     padding: 80px 0;
     text-align: center;
-    background-color: transparent;
+    background: transparent;
 }
 
 .section-header .subtitle {
@@ -1275,7 +1275,7 @@ ul {
 
 /* --- About Page Styles --- */
 .about-page {
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("images/bg.png") no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("images/World_map.svg") no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
 }
@@ -2681,6 +2681,24 @@ background: linear-gradient(135deg, #fff8e7 0%, #ffe0b2 100%);
 .scroll-scale.visible {
     opacity: 1;
     transform: scale(1);
+}
+
+/* Footer Staggering */
+.footer-section:nth-child(1) { transition-delay: 0.1s; }
+.footer-section:nth-child(2) { transition-delay: 0.2s; }
+.footer-section:nth-child(3) { transition-delay: 0.3s; }
+.footer-section:nth-child(4) { transition-delay: 0.4s; }
+
+/* Accessibility: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .scroll-fade-left,
+    .scroll-fade-right,
+    .scroll-scale {
+        transition: none;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 /* Call to Action Banner */
@@ -4455,13 +4473,25 @@ h1 {
 }
 
 /* --- Partners Grid Styles --- */
-.partners-grid {
+.partners-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.partners-track {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    gap: 60px;
+    width: max-content;
+    animation: scroll 35s linear infinite;
     align-items: center;
-    opacity: 0.8;
+}
+
+.partners-track:hover {
+    animation-play-state: paused;
 }
 
 .partner-item {
@@ -4473,6 +4503,8 @@ h1 {
     font-weight: 700;
     font-family: var(--font-heading);
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .partner-item:hover {
