@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Downloadable Report | Nissi Medical Outreach</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --nissi-crimson: orange;
+            --nissi-orange: #532606;
+            --text-dark: #111c2c;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Controls for the user (hidden in PDF) */
+        .controls {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* The PDF Container */
+        #pdf-content {
+            width: 210mm; /* A4 Width */
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            color: var(--text-dark);
+        }
+
+        /* Report Header */
+        .report-header {
+            background: linear-gradient(rgba(90, 4, 4, 0.5), rgba(107, 20, 5, 0.65)), url('images/13.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .report-header img { width: 80px; margin-bottom: 15px; }
+
+        /* Story Layout (Single Column for Stability) */
+        .story-section {
+            padding: 40px;
+            border-bottom: 1px solid #490808;
+            page-break-inside: avoid; /* Prevents splitting stories */
+        }
+
+        .story-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            color: var(--nissi-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        h2 { font-family: 'Outfit', sans-serif; color: var(--nissi-crimson); margin: 10px 0; }
+        p { line-height: 1.6; color: #4b5563; }
+
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            background: #fff7ed;
+            padding: 30px;
+            margin: 20px 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-box b { display: block; font-size: 24px; color: var(--nissi-orange); }
+
+        .report-footer {
+            padding: 30px;
+            background: #f9fafb;
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        /* PDF Specific Overrides */
+        @media print {
+            body { background: white; padding: 0; }
+            #pdf-content { box-shadow: none; width: 100%; }
+            .controls { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <a href="newsletter.html" style="text-decoration: none; color: #666;">← Back to Site</a>
+        <button id="downloadBtn" style="background: #ea580c; color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+            DOWNLOAD AS PDF
+        </button>
+    </div>
+
+    <style>
+    /* Add this to your existing styles */
+    .new-page {
+        page-break-before: always !important;
+    }
+    
+    .intro-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #410202;
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        border-left: 5px solid var(--nissi-orange);
+        padding-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    .bible-verse {
+        background: #b97a04;
+        border-radius: 8px;
+        padding: 20px;
+        font-style: italic;
+        color: var(--nissi-crimson);
+        margin: 20px 0;
+        text-align: center;
+    }
+</style>
+
+<div id="pdf-content">
+    <header class="report-header">
+        <img src="images/logo.webp" alt="Logo">
+        <h1 style="margin: 0; font-family: 'Outfit'; font-size: 42px;">2024 IMPACT REPORT</h1>
+        <p style="font-size: 1.2rem; color: orange;">Nissi Medical Outreach: Healing Hands, Hopeful Hearts</p>
+    </header>
+
+    <section class="story-section">
+        <h2 class="section-title">A Message of Stewardship</h2>
+        <p class="intro-text">
+            In 2024, Nissi Medical Outreach remained committed to the biblical mandate of caring for the "least of these." We recognize that medical care is often the first step in restoring dignity and hope to a community. This year, through the grace of God and the generosity of our partners, we expanded our footprint into some of the most remote regions of Uganda, ensuring that geography is never a barrier to life-saving healthcare.
+        </p>
+        <div class="bible-verse">
+            "And He sent them out to proclaim the kingdom of God and to heal the sick." — Luke 9:2
+        </div>
+        <div class="impact-stats">
+            <div class="stat-box"><b>1200+</b> Patients Treated</div>
+            <div class="stat-box"><b>200+</b> Children Immunized</div>
+            <div class="stat-box"><b>459</b> Lives Touched in Gingo</div>
+        </div>
+    </section>
+
+    <section class="story-section new-page">
+        <img src="images/14.webp" class="story-image" alt="Gulu Outreach">
+        <span class="tag">Medical Mission</span>
+        <h2 class="section-title">Restoring Hope in Northern Uganda: The Gulu Mission</h2>
+        <p>
+            In partnership with Next Generation Ministries and Dr. Rebecca Hunter, our team embarked on a four-day intensive medical mission to the remote villages of Gulu District. The post-conflict landscape of Northern Uganda still presents significant challenges to healthcare infrastructure, leaving many families days away from the nearest clinic.
+        </p>
+        <p>
+            Our team provided a comprehensive range of services, including general consultations, laboratory testing for malaria and typhoid, and basic surgical procedures. Beyond the medicine, our volunteers from Sozo Dream Foundation and Hummingbird Foundation engaged in community counseling and spiritual outreach, ensuring that we treated the whole person—body and soul.
+        </p>
+        <p>
+            <strong>Key Outcome:</strong> Over 1,200 residents received direct medical intervention, and 150 local leaders were trained in basic first aid and hygiene protocols.
+        </p>
+    </section>
+
+    <section class="story-section new-page">
+        <img src="images/5.webp" class="story-image" alt="Menstrual Health">
+        <span class="tag">Empowerment & Education</span>
+        <h2 class="section-title">The Namutumba Project: Dignity Through Menstrual Health</h2>
+        <p>
+            In the Namutumba District, we addressed a silent barrier to education: Period Poverty. Statistics show that adolescent girls in rural Uganda miss up to 20% of the school year due to a lack of sanitary supplies.
+        </p>
+        <p>
+            Led by our dedicated team members Sylivia and Betty, we conducted an interactive workshop focusing on the production of reusable sanitary pads. We don't just provide supplies; we provide skills. By teaching young women how to manufacture their own hygienic solutions from locally sourced flannel, we ensure the sustainability of the project.
+        </p>
+        <p>
+            <strong>Impact:</strong> 300 girls at Cetkana Primary School received menstrual hygiene kits and training, significantly reducing absenteeism and fostering a culture of health and openness.
+        </p>
+    </section>
+
+    <section class="story-section new-page">
+        <img src="images/6.webp" class="story-image" alt="Gingo Village">
+        <span class="tag">Community Health Camp</span>
+        <h2 class="section-title">Gingo Village: Addressing the Non-Communicable Disease Crisis</h2>
+        <p>
+            Our outreach to Gingo Village in Mityana District revealed a staggering need for chronic disease management. In a single day, we served 459 citizens, many of whom were unaware they were living with high blood pressure or vision impairments.
+        </p>
+        <p>
+            Through our partnership with Live in Light Ministries, we distributed hundreds of pairs of prescription eyeglasses, instantly restoring the ability for elders to read Scripture and for workers to return to their trades. We also integrated HIV testing and dental care, providing a "one-stop" health sanctuary for the village.
+        </p>
+        <p>
+            <strong>The Result:</strong> 459 citizens screened; 120 pairs of eyeglasses distributed; 100% of patients received free medication and lifestyle counseling for hypertension and diabetes.
+        </p>
+    </section>
+
+    <section class="story-section new-page" style="text-align: center; background: #fffcf9;">
+        <h2 style="color: var(--nissi-crimson);">Partner With Us in 2025</h2>
+        <p class="intro-text">
+            The stories shared in this report are only possible because of partners like you. As we look toward 2025, our goal is to purchase a dedicated mobile clinic vehicle to reach even deeper into the "last-mile" communities of Uganda.
+        </p>
+        <div style="margin: 40px 0;">
+            <p><strong>Ways to Give:</strong></p>
+            
+            <div style="margin: 25px 0; padding: 15px; background: white; display: inline-block; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div id="donate-qr" style="width: 120px; height: 120px; margin: 0 auto;"></div>
+                <p style="margin: 8px 0 0; font-weight: 700; color: var(--nissi-orange); font-size: 13px; letter-spacing: 0.5px;">SCAN TO DONATE</p>
+            </div>
+
+            <p>Bank Transfer: [Your Bank Details Here]</p>
+            <p>Mobile Money: [Your Number Here]</p>
+        </div>
+        <div class="bible-verse">
+            "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up." — Galatians 6:9
+        </div>
+    </section>
+
+    <footer class="report-footer">
+        <p><b>Nissi Medical Outreach</b><br>
+        Kampala, Uganda | nissimedicaloutreach@gmail.com | +256 782 862777</p>
+        <p>© 2025 Impact Report. All Rights Reserved.</p>
+    </footer>
+</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate QR Code locally to avoid CORS/Taint issues
+            new QRCode(document.getElementById("donate-qr"), {
+                text: "https://nissimedicaloutreach.org/donate.html",
+                width: 120,
+                height: 120,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (window.location.protocol === 'file:') {
+                    if (!confirm('Security Warning: You are opening this file directly (file://). Browser security blocks PDF generation for local images. For the best experience, use a local server.\n\nDo you want to try generating anyway?')) {
+                        return;
+                    }
+                }
+
+                const element = document.getElementById('pdf-content');
+                const btn = this;
+                const originalText = btn.innerText;
+                
+                btn.innerText = 'Generating PDF...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'wait';
+
+                const opt = {
+                    margin: [10, 10],
+                    filename: 'Nissi_Impact_Report_2024.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true, logging: false },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                };
+
+                html2pdf().set(opt).from(element).save().then(function() {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                }).catch(function(err) {
+                    console.error('PDF Generation Error:', err);
+                    alert('Error generating PDF: ' + (err.message || err) + '\n\nNote: "Tainted canvas" errors are caused by opening files directly without a server.');
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
