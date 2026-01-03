@@ -1,0 +1,12 @@
+{
+  "name": "nissi-renderer",
+  "version": "1.0.0",
+  "description": "Render local HTML to PDF using Puppeteer",
+  "main": "render_pdf.js",
+  "scripts": {
+    "render": "node render_pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.3.8"
+  }
+}
