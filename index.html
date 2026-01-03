@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Nissi Medical Outreach | Medical Missions in Uganda</title>
-    <meta name="description" content="Nissi Medical Outreach provides medical missions, preventive health education, and compassionate community care across Uganda.">
-    <meta name="keywords" content="medical missions Uganda, community health Uganda, Christian outreach, Nissi Medical Outreach, health education Uganda">
+    <meta name="description"
+        content="Nissi Medical Outreach provides medical missions, preventive health education, and compassionate community care across Uganda.">
+    <meta name="keywords"
+        content="medical missions Uganda, community health Uganda, Christian outreach, Nissi Medical Outreach, health education Uganda">
     <meta name="robots" content="index, follow">
 
     <meta property="og:site_name" content="Nissi Medical Outreach">
     <meta property="og:title" content="Nissi Medical Outreach | Medical Missions in Uganda">
-    <meta property="og:description" content="We serve communities across Uganda through medical outreach, preventive care, and compassionate Christian health services.">
+    <meta property="og:description"
+        content="We serve communities across Uganda through medical outreach, preventive care, and compassionate Christian health services.">
     <meta property="og:image" content="https://nissimedicaloutreach.org/images/logo.webp">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nissimedicaloutreach.org/">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nissi Medical Outreach">
-    <meta name="twitter:description" content="Medical missions, preventive care and community health services across Uganda.">
+    <meta name="twitter:description"
+        content="Medical missions, preventive care and community health services across Uganda.">
     <meta name="twitter:image" content="https://nissimedicaloutreach.org/images/logo.webp">
 
     <link rel="icon" href="https://nissimedicaloutreach.org/images/nissi.ico" type="image/webp">
@@ -27,56 +32,125 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://nissimedicaloutreach.org/">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Your existing styles remain here */
-        .whatsapp-float { position: fixed; bottom: 120px; right: 40px; background-color: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; }
-        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
-        [data-type="email-icon"] { position: relative; }
-        [data-type="email-icon"]::after { content: attr(data-email); position: absolute; top: 140%; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 12px; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, top 0.3s; z-index: 1000; pointer-events: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        [data-type="email-icon"]:hover::after { opacity: 1; visibility: visible; top: 120%; }
-        .hero-cta { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); transform: translateY(-2px); transition: all 0.3s ease; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
-        .hero-cta:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 120px;
+            right: 40px;
+            background-color: #25d366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        [data-type="email-icon"] {
+            position: relative;
+        }
+
+        [data-type="email-icon"]::after {
+            content: attr(data-email);
+            position: absolute;
+            top: 140%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-type="email-icon"]:hover::after {
+            opacity: 1;
+            visibility: visible;
+            top: 120%;
+        }
+
+        .hero-cta {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
     </style>
 
     <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Nissi Medical Outreach",
-        "alternateName": ["NMO", "Nissi Medical"],
-        "url": "https://nissimedicaloutreach.org/"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nissi Medical Outreach",
-        "url": "https://nissimedicaloutreach.org/",
-        "logo": "https://nissimedicaloutreach.org/images/logo1.webp",
-        "sameAs": [
-          "https://www.facebook.com/p/Nissi-Medical-Outreach-100057958748446/"
-        ]
-      }
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Nissi Medical Outreach",
+    "alternateName": ["NMO", "Nissi Medical"],
+    "url": "https://nissimedicaloutreach.org/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nissi Medical Outreach",
+    "url": "https://nissimedicaloutreach.org/",
+    "logo": "https://nissimedicaloutreach.org/images/logo1.webp",
+    "sameAs": [
+      "https://www.facebook.com/p/Nissi-Medical-Outreach-100057958748446/"
     ]
-    </script>
+  }
+]
+</script>
+
 </head>
+
 <body class="home-page">
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
-                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html" class="tb-cta-link">Become a Volunteer</a></p>
+                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html"
+                        class="tb-cta-link">Become a Volunteer</a></p>
             </div>
             <div class="tb-right">
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t" data-type="email-icon" aria-label="Send Email" title="Send Email">
+                    <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t"
+                        data-type="email-icon" aria-label="Send Email" title="Send Email">
                         <i class="fa-regular fa-envelope"></i>
                     </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp"
+                        style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -115,23 +189,25 @@
 
     <header class="hero">
         <div class="container hero-container">
-            
+
             <div class="hero-text">
-                <h1>Providing <span class="highlight">Life-Saving Medical Care</span> to Vulnerable Communities in <span class="highlight">Uganda</span></h1>
-                
+                <h1>Providing <span class="highlight">Life-Saving Medical Care</span> to Vulnerable Communities in <span
+                        class="highlight">Uganda</span></h1>
+
                 <span class="dot dot-blue"></span>
                 <span class="dot dot-orange"></span>
 
-                <p>We deliver free medical treatment, preventive health education, and Christ-centered care to families with limited access to healthcare.</p>
-                
+                <p>We deliver free medical treatment, preventive health education, and Christ-centered care to families
+                    with limited access to healthcare.</p>
+
                 <a href="donate.html" class="btn btn-orange hero-cta">Donate Now <i class="fa-solid fa-heart"></i></a>
             </div>
 
-           <div class="hero-visual">
+            <div class="hero-visual">
                 <div class="single-image-container">
                     <img src="images/Africa.webp" alt="Africa Charity Collage">
                 </div>
-                
+
                 <span class="dot dot-green"></span>
             </div>
         </div>
@@ -142,11 +218,15 @@
             <div class="mission-grid">
                 <div class="mission-header scroll-fade-left">
                     <span class="mission-label">OUR MISSION</span>
-                    <h2>We provide Christ-centered medical outreach and compassionate healthcare to underserved communities in Uganda.</h2>
+                    <h2>We provide Christ-centered medical outreach and compassionate healthcare to underserved
+                        communities in Uganda.</h2>
                 </div>
                 <div class="mission-body scroll-fade-right">
-                    <p>Nissi Medical Outreach runs regular medical clinics, basic clinical care, and preventive health education across rural and peri-urban districts. We work with local health workers to deliver practical, dignified care to people who lack reliable access to services.</p>
-                    <a href="about.html" class="mission-link">Learn more about us <i class="fa-solid fa-arrow-right"></i></a>
+                    <p>Nissi Medical Outreach runs regular medical clinics, basic clinical care, and preventive health
+                        education across rural and peri-urban districts. We work with local health workers to deliver
+                        practical, dignified care to people who lack reliable access to services.</p>
+                    <a href="about.html" class="mission-link">Learn more about us <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -157,7 +237,8 @@
             <div class="section-header scroll-scale">
                 <span class="subtitle">OUR PROGRAMS</span>
                 <h2>Holistic Care for Every Need</h2>
-                <p>We serve with excellence, dignity, and love, addressing practical needs through our five core pillars of outreach.</p>
+                <p>We serve with excellence, dignity, and love, addressing practical needs through our five core pillars
+                    of outreach.</p>
             </div>
 
             <div class="program-showcase">
@@ -211,7 +292,9 @@
                 <div class="left scroll-fade-left">
                     <span class="subtitle">Contribute to a better future for all</span>
                     <h2>Do more together than you can alone. Start helping now!</h2>
-                    <p class="lead">We partner with communities to provide practical healthcare, education, and support that creates lasting change. Join hands with us to support programs that strengthen families and protect vulnerable children.</p>
+                    <p class="lead">We partner with communities to provide practical healthcare, education, and support
+                        that creates lasting change. Join hands with us to support programs that strengthen families and
+                        protect vulnerable children.</p>
                     <a href="volunteer.html" class="btn btn-orange">Become a Volunteer</a>
                 </div>
 
@@ -233,7 +316,8 @@
                 <div class="impact-content impact-animate">
                     <span class="subtitle">OUR IMPACT</span>
                     <h2>Bringing Hope Where It's Needed Most</h2>
-                    <p>Every number represents a life touched, a family supported, and a community strengthened through Christ's love. Join us in our mission to provide accessible healthcare to the vulnerable.</p>
+                    <p>Every number represents a life touched, a family supported, and a community strengthened through
+                        Christ's love. Join us in our mission to provide accessible healthcare to the vulnerable.</p>
                     <a href="missions.html" class="btn btn-orange">VIEW OUR MISSIONS</a>
                 </div>
                 <div class="impact-stats-grid">
@@ -269,7 +353,8 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>"Nissi Medical Outreach brought hope to our village. The free medical camp helped my mother get the treatment she desperately needed."</p>
+                    <p>"Nissi Medical Outreach brought hope to our village. The free medical camp helped my mother get
+                        the treatment she desperately needed."</p>
                     <div class="author">
                         <div class="author-avatar">S</div>
                         <div class="author-info">
@@ -281,7 +366,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>"Volunteering with Nissi has been a life-changing experience. Seeing the smiles on patients' faces is the greatest reward."</p>
+                    <p>"Volunteering with Nissi has been a life-changing experience. Seeing the smiles on patients'
+                        faces is the greatest reward."</p>
                     <div class="author">
                         <div class="author-avatar">J</div>
                         <div class="author-info">
@@ -293,7 +379,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>"Their dedication to preventive care and health education is transforming how our youth approach their well-being."</p>
+                    <p>"Their dedication to preventive care and health education is transforming how our youth approach
+                        their well-being."</p>
                     <div class="author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
@@ -310,14 +397,16 @@
         <div class="container">
             <div class="transparency-content">
                 <h2>Transparency & Trust</h2>
-                <p class="transparency-intro">We believe in full accountability to our donors, partners, and the communities we serve.</p>
-                
+                <p class="transparency-intro">We believe in full accountability to our donors, partners, and the
+                    communities we serve.</p>
+
                 <div class="trust-points">
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
                         <div class="trust-text">
                             <h3>Registered Nonprofit</h3>
-                            <p>Nissi Medical Outreach is a fully registered nonprofit organization operating in compliance with Ugandan laws.</p>
+                            <p>Nissi Medical Outreach is a fully registered nonprofit organization operating in
+                                compliance with Ugandan laws.</p>
                         </div>
                     </div>
 
@@ -325,7 +414,8 @@
                         <div class="trust-icon"><i class="fa-solid fa-users"></i></div>
                         <div class="trust-text">
                             <h3>Community Led</h3>
-                            <p>We are a community-based organization with local leadership and deep engagement in the areas we serve.</p>
+                            <p>We are a community-based organization with local leadership and deep engagement in the
+                                areas we serve.</p>
                         </div>
                     </div>
 
@@ -333,7 +423,8 @@
                         <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <div class="trust-text">
                             <h3>Financial Integrity</h3>
-                            <p>All donations and resources are used responsibly for medical outreach and community health programs.</p>
+                            <p>All donations and resources are used responsibly for medical outreach and community
+                                health programs.</p>
                         </div>
                     </div>
 
@@ -341,11 +432,13 @@
                         <div class="trust-icon"><i class="fa-solid fa-handshake"></i></div>
                         <div class="trust-text">
                             <h3>Strategic Partnerships</h3>
-                            <p>We work in partnership with local health facilities, government agencies, and international supporters.</p>
+                            <p>We work in partnership with local health facilities, government agencies, and
+                                international supporters.</p>
                         </div>
                     </div>
                 </div>
-                <p class="commitment">"We are committed to integrity, accountability, and faithful stewardship of all resources entrusted to us."</p>
+                <p class="commitment">"We are committed to integrity, accountability, and faithful stewardship of all
+                    resources entrusted to us."</p>
             </div>
         </div>
     </section>
@@ -386,7 +479,8 @@
                 <div class="cta-text">
                     <span class="cta-label">GET INVOLVED</span>
                     <h2>Help us bring compassionate medical care to communities in need</h2>
-                    <p>Your support makes medical camps, health education, and life-saving treatments possible for thousands in Uganda.</p>
+                    <p>Your support makes medical camps, health education, and life-saving treatments possible for
+                        thousands in Uganda.</p>
                 </div>
                 <div class="cta-action">
                     <a href="donate.html" class="btn btn-orange">SUPPORT AN OUTREACH</a>
@@ -395,71 +489,81 @@
         </div>
     </section>
 
-<footer class="footer scroll-animate">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section scroll-fade-left">
-                <div class="footer-logo">
-                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
-                    <span>Nissi Medical Outreach</span>
+    <footer class="footer scroll-animate">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section scroll-fade-left">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                        <span>Nissi Medical Outreach</span>
+                    </div>
+                    <p>A Christ-centered community health initiative committed to strengthening healthcare access in
+                        underserved Ugandan communities.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section scroll-fade-right">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="missions.html">Missions</a></li>
-                    <li><a href="causes.html">Our Causes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section scroll-fade-right">
-                <h3>Stay Updated</h3>
-                <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                    <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
-            
-            <div class="footer-section scroll-fade-right">
-                <h3>Contact Info</h3>
-                <div class="footer-contact">
-                    <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
-                    <p><i class="fa-solid fa-phone"></i> <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3">
-                        [Loading...]
-                    </a></p>
-                    <p><i class="fa-brands fa-whatsapp"></i> <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp">
-                        Chat on WhatsApp
-                    </a></p>
-                    <p><i class="fa-regular fa-envelope"></i> <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t">
-                        [Loading...]
-                    </a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-<button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
 
-<a href="#" class="whatsapp-float decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+                <div class="footer-section scroll-fade-right">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="missions.html">Missions</a></li>
+                        <li><a href="causes.html">Our Causes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section scroll-fade-right">
+                    <h3>Stay Updated</h3>
+                    <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the
+                        latest mission updates and stories.</p>
+                    <form class="newsletter-form"
+                        onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Your email address" required
+                            style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
+                        <button type="submit" class="btn btn-orange"
+                            style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="footer-section scroll-fade-right">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+                        <p><i class="fa-solid fa-phone"></i> <a href="#" class="decode-contact"
+                                data-encoded="KzI1NiA3ODIgODYyNzc3">
+                                [Loading...]
+                            </a></p>
+                        <p><i class="fa-brands fa-whatsapp"></i> <a href="#" class="decode-contact"
+                                data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp">
+                                Chat on WhatsApp
+                            </a></p>
+                        <p><i class="fa-regular fa-envelope"></i> <a href="#" class="decode-contact"
+                                data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t">
+                                [Loading...]
+                            </a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <a href="#" class="whatsapp-float decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp"
+        aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="main.js" defer></script>
 </body>
+
 </html>
