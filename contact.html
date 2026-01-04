@@ -12,6 +12,63 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "mainEntity": {
+            "@id": "https://nissimedicaloutreach.org/#organization"
+          },
+          "breadcrumb": {
+            "@id": "https://nissimedicaloutreach.org/contact.html#breadcrumb"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://nissimedicaloutreach.org/#organization",
+          "name": "Nissi Medical Outreach",
+          "url": "https://nissimedicaloutreach.org/",
+          "logo": "https://nissimedicaloutreach.org/images/logo1.webp",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+256-782-862777",
+            "contactType": "customer service",
+            "email": "nissimedicaloutreach@gmail.com",
+            "areaServed": "UG",
+            "availableLanguage": "English"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kampala",
+            "addressCountry": "UG"
+          },
+          "sameAs": [
+            "https://www.facebook.com/p/Nissi-Medical-Outreach-100057958748446/"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://nissimedicaloutreach.org/contact.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://nissimedicaloutreach.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": "https://nissimedicaloutreach.org/contact.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         /* Enhanced Contact Form Styles */
         #contact-form {
@@ -261,6 +318,15 @@
             opacity: 1;
             visibility: visible;
             top: 120%;
+        }
+        @media (max-width: 768px) {
+            .footer-content, .footer-section {
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -523,7 +589,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p>
+                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved. | Designed by jojy</p>
             </div>
         </div>
     </footer>

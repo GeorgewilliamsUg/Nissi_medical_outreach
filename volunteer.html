@@ -44,6 +44,39 @@
             visibility: visible;
             top: 120%;
         }
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 120px;
+            right: 40px;
+            background-color: #25d366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .footer-content, .footer-section {
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+                display: flex;
+            }
+        }
     </style>
 </head>
 
@@ -210,12 +243,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved.</p>
+                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved. | Designed by jojy</p>
             </div>
         </div>
     </footer>
 
     <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <a href="#" class="whatsapp-float decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="main.js" defer></script>
 </body>
