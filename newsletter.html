@@ -9,7 +9,7 @@
     <meta name="description"
         content="Read our 2024 Impact Report featuring stories of medical missions, menstrual health initiatives, and community outreach in Uganda.">
 
-    <link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
@@ -72,93 +72,71 @@
 
         .story-content {
             padding: 30px;
-            flex: 1;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .story-tag {
             display: inline-block;
-            background-color: #fff7ed;
-            color: #ea580c;
-            font-size: 12px;
-            font-weight: 700;
+            background: rgba(230, 126, 34, 0.1);
+            color: #e67e22;
             padding: 6px 12px;
             border-radius: 20px;
-            margin-bottom: 15px;
-            width: fit-content;
+            font-size: 12px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            align-self: flex-start;
         }
 
         .story-content h3 {
-            font-family: 'Outfit', sans-serif;
             font-size: 22px;
-            font-weight: 700;
-            color: #1a2b29;
             margin-bottom: 15px;
-            line-height: 1.3;
+            color: #2c3e50;
+            line-height: 1.4;
         }
 
         .story-content p {
-            color: #555;
-            line-height: 1.7;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
             font-size: 15px;
-            margin-bottom: 20px;
         }
 
         .story-footer {
             margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid #f0f0f0;
-            font-size: 14px;
-            color: #888;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            color: #95a5a6;
+            font-size: 13px;
         }
 
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 120px;
-            right: 40px;
-            background-color: #25d366;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
+        .story-footer span {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            gap: 8px;
         }
 
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
+       /* Newsletter styles moved to styles.css */
+        /* Navigation */
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--theme-blue) !important;
         }
-
-        @media (max-width: 768px) {
-            .footer-content, .footer-section {
-                text-align: center;
-            }
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
+        
+        /* Footer */
+        .footer-social a:hover {
+            color: var(--theme-blue) !important;
+            border-color: var(--theme-blue) !important;
         }
     </style>
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
+       <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
                 <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html"
@@ -167,11 +145,15 @@
             <div class="tb-right">
                 <div class="info-item">
                     <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t"
-                        aria-label="Send Email"><i class="fa-regular fa-envelope"></i></a>
+                        data-type="email-icon" aria-label="Send Email" title="Send Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp"
-                        style="color: #25d366;" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp"
+                        aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                 </div>
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -182,12 +164,10 @@
             </div>
         </div>
     </div>
-
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
                 <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
-                <span>Nissi Medical Outreach</span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -196,10 +176,11 @@
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html">Causes</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="newsletter.html" class="active">Newsletter</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
             </ul>
 
-            <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+            <a href="donate.html" class="btn btn-red">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -355,10 +336,10 @@
 
                 <div class="footer-section scroll-fade-right">
                     <h3>Stay Updated</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                    <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                        <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                        <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                        <input type="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
                     </form>
                 </div>
 

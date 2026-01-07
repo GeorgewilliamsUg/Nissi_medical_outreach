@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Nissi Medical Outreach</title>
+    <meta name="description" content="View photos from our recent medical missions, community outreach programs, and health education workshops in Uganda.">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gallery | Nissi Medical Outreach">
+    <meta property="og:description" content="View photos from our recent medical missions, community outreach programs, and health education workshops in Uganda.">
+    <meta property="og:image" content="images/logo.png">
+
+    <!-- Bootstrap CSS (Used for Gallery Hero) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="tb-left">
+                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html" class="tb-cta-link">Become a Volunteer</a></p>
+            </div>
+            <div class="tb-right">
+                <div class="info-item">
+                    <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t" data-type="email-icon" aria-label="Send Email" title="Send Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="info-item">
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Nissi Medical Outreach" class="logo-img">
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="missions.html">Missions</a></li>
+                <li><a href="causes.html">Causes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+
+            <a href="donate.html" class="btn btn-red">DONATE NOW</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <section id="nissi-gallery-hero" class="position-relative overflow-hidden d-flex align-items-center" style="min-height: 75vh;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0">
+            <img src="images/9.webp" alt="Nissi Medical Outreach background" class="w-100 h-100 object-fit-cover" fetchpriority="high">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+        </div>
+
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <span class="text-uppercase text-white-50 mb-2 d-block small tracking-2">Compassion in Action</span>
+                    <h1 class="display-3 fw-bold mb-4 metallic-gold">Our Gallery</h1>
+                    <p class="lead text-white-50 mb-5">
+                        Moments of hope, healing, health education, sanitary pad making workshops, and transformative care captured in the field.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a href="#galleryGrid" class="btn btn-gold px-4 py-3">View Photos</a>
+                        <a href="donate.html" class="btn btn-outline-light px-4 py-3">Support Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="hero-swiper-container">
+                        <div class="hero-swiper-track">
+                            <div class="hero-card-item">
+                                <img src="images/4.webp" alt="Medical Missions">
+                                <div class="hero-card-caption">Medical Missions</div>
+                            </div>
+                            <div class="hero-card-item">
+                                <img src="images/14.webp" alt="Patient Care">
+                                <div class="hero-card-caption">Patient Care</div>
+                            </div>
+                            <div class="hero-card-item">
+                                <img src="images/6.webp" alt="Community Outreach">
+                                <div class="hero-card-caption">Community Outreach</div>
+                            </div>
+                            <div class="hero-card-item">
+                                <img src="images/2.webp" alt="Community Gathering">
+                                <div class="hero-card-caption">Community Gathering</div>
+                            </div>
+                            <div class="hero-card-item">
+                                <img src="images/3.webp" alt="Child Vaccination">
+                                <div class="hero-card-caption">Child Vaccination</div>
+                            </div>
+                            <div class="hero-card-item">
+                                <img src="images/5.webp" alt="Health Education">
+                                <div class="hero-card-caption">Health Education</div>
+                            </div>
+                            <!-- Duplicate Set for Infinite Scroll -->
+                            <div class="hero-card-item"><img src="images/4.webp" alt="Medical Missions"><div class="hero-card-caption">Medical Missions</div></div>
+                            <div class="hero-card-item"><img src="images/14.webp" alt="Patient Care"><div class="hero-card-caption">Patient Care</div></div>
+                            <div class="hero-card-item"><img src="images/6.webp" alt="Community Outreach"><div class="hero-card-caption">Community Outreach</div></div>
+                            <div class="hero-card-item"><img src="images/2.webp" alt="Community Gathering"><div class="hero-card-caption">Community Gathering</div></div>
+                            <div class="hero-card-item"><img src="images/3.webp" alt="Child Vaccination"><div class="hero-card-caption">Child Vaccination</div></div>
+                            <div class="hero-card-item"><img src="images/5.webp" alt="Health Education"><div class="hero-card-caption">Health Education</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <main class="section-padding">
+        <div class="container">
+            <div class="gallery-filters" aria-label="Gallery filters">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All Photos</button>
+                <button class="filter-btn" data-filter="medical" aria-pressed="false">Medical Clinics</button>
+                <button class="filter-btn" data-filter="education" aria-pressed="false">Education & Training</button>
+                <button class="filter-btn" data-filter="community" aria-pressed="false">Community Outreach</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Medical -->
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Medical Checkup photo">
+                    <img src="images/4.webp" alt="Medical Checkup" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Doctor with Patient photo">
+                    <img src="images/14.webp" alt="Doctor with Patient" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Health Screening photo">
+                    <img src="images/6.webp" alt="Health Screening" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Medical Care photo">
+                    <img src="images/9.webp" alt="Medical Care" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Child Vaccination photo">
+                    <img src="images/3.webp" alt="Child Vaccination" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="medical" tabindex="0" role="button" aria-label="View Maternal Health photo">
+                    <img src="images/11.webp" alt="Maternal Health" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+
+                <!-- Education -->
+                <div class="gallery-item" data-category="education" tabindex="0" role="button" aria-label="View Health Education photo">
+                    <img src="images/5.webp" alt="Health Education" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="education" tabindex="0" role="button" aria-label="View Training Session photo">
+                    <img src="images/7.webp" alt="Training Session" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="education" tabindex="0" role="button" aria-label="View Educational Workshop photo">
+                    <img src="images/10.webp" alt="Educational Workshop" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="education" tabindex="0" role="button" aria-label="View Youth Programs photo">
+                    <img src="images/12.webp" alt="Youth Programs" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="education" tabindex="0" role="button" aria-label="View Youth Education photo">
+                    <img src="images/15.webp" alt="Youth Education" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+
+                <!-- Community -->
+                <div class="gallery-item" data-category="community" tabindex="0" role="button" aria-label="View Community Gathering photo">
+                    <img src="images/2.webp" alt="Community Gathering" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="community" tabindex="0" role="button" aria-label="View Community Support photo">
+                    <img src="images/8.webp" alt="Community Support" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="community" tabindex="0" role="button" aria-label="View Community Event photo">
+                    <img src="images/11.webp" alt="Community Event" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="community" tabindex="0" role="button" aria-label="View Village Outreach photo">
+                    <img src="images/13.webp" alt="Village Outreach" class="w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
+                    <div class="gallery-overlay" aria-hidden="true"><i class="fa-solid fa-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Expanded Gallery Image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer scroll-animate">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section scroll-fade-left">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Nissi Medical Outreach" class="footer-logo-img">
+                        <span>Nissi Medical Outreach</span>
+                    </div>
+                    <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section scroll-fade-right">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="missions.html">Missions</a></li>
+                        <li><a href="causes.html">Our Causes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section scroll-fade-right">
+                    <h3>Stay Updated</h3>
+                    <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="footer-section scroll-fade-right">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+                        <p><i class="fa-solid fa-phone"></i> <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3">
+                            [Loading...]
+                        </a></p>
+                        <p><i class="fa-brands fa-whatsapp"></i> <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp">
+                            Chat on WhatsApp
+                        </a></p>
+                        <p><i class="fa-regular fa-envelope"></i> <a href="#" class="decode-contact" data-encoded="bmlzc2ltZWRpY2Fsb3V0cmVhY2hAZ21haWwuY29t">
+                            [Loading...]
+                        </a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nissi Medical Outreach. All rights reserved. | Designed by jojy</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <a href="#" class="whatsapp-float decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js" defer></script>
+    <script>
+        // Inline Gallery Logic (in case gallery.js is missing or main.js doesn't cover it)
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            // Filtering
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    // Add active to clicked
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hide');
+                            item.style.display = 'block'; // Ensure display is reset
+                        } else {
+                            item.classList.add('hide');
+                            item.style.display = 'none'; // Explicit hide
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightbox.style.display = 'flex';
+                });
+                // Keyboard accessibility
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.click();
+                    }
+                });
+            });
+
+            // Close Lightbox
+            window.closeLightbox = function() {
+                lightbox.style.display = 'none';
+            }
+
+            if(lightboxClose) {
+                lightboxClose.addEventListener('click', closeLightbox);
+            }
+
+            lightbox.addEventListener('click', (e) => {
+                if(e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

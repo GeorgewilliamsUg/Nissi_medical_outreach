@@ -11,7 +11,7 @@
 
     <meta property="og:title" content="Our Causes | Nissi Medical Outreach">
     <meta property="og:description" content="Support healthcare initiatives that transform communities across Uganda.">
-    <meta property="og:image" content="https://nissimedicaloutreach.org/images/logo.webp">
+    <meta property="og:image" content="https://nissimedicaloutreach.org/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nissimedicaloutreach.org/causes">
 
@@ -19,74 +19,14 @@
     <meta name="twitter:title" content="Our Causes | Nissi Medical Outreach">
     <meta name="twitter:description" content="Help us provide medical care and health education to underserved communities.">
     
-    <link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="canonical" href="https://nissimedicaloutreach.org/causes">
     
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Email Tooltip Styles */
-        [data-type="email-icon"] {
-            position: relative;
-        }
-        [data-type="email-icon"]::after {
-            content: attr(data-email);
-            position: absolute;
-            top: 140%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
-            z-index: 1000;
-            pointer-events: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        [data-type="email-icon"]:hover::after {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 120px;
-            right: 40px;
-            background-color: #25d366;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .footer-content, .footer-section {
-                text-align: center;
-            }
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
-        }
+    <!-- Styles consolidated into styles.css -->
+      
     </style>
 </head>
 <body>
@@ -94,7 +34,7 @@
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
-                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="contact.html" class="tb-cta-link">Become a Volunteer</a></p>
+                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html" class="tb-cta-link">Become a Volunteer</a></p>
             </div>
             <div class="tb-right">
                 <div class="info-item">
@@ -103,7 +43,7 @@
                     </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -120,8 +60,8 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
-                <span>Nissi Medical Outreach</span>
+                <img src="images/logo.png" alt="Nissi Medical Outreach" class="logo-img">
+        
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
@@ -129,10 +69,11 @@
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html" class="active">Causes</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="newsletter.html">Newsletter</a></li>
             </ul>
 
-            <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+            <a href="donate.html" class="btn btn-red">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -290,7 +231,7 @@
                     <h2>Help Us Build a Community Clinic</h2>
                     <p>While our mobile clinics are effective, the need for a permanent presence in Mukono District is growing. We are raising funds to construct a small community health center that will operate 24/7.</p>
                     <p>This facility will provide maternity care, emergency first aid, and ongoing treatment for chronic conditions.</p>
-                    <a href="donate.html" class="btn btn-orange">Support This Project</a>
+                    <a href="donate.html" class="btn btn-red">Support This Project</a>
                 </div>
                 <div class="about-img">
                     <img src="images/13.webp" alt="Community Clinic Construction Plan">
@@ -309,7 +250,7 @@
                     <p>Whether it's $10 for malaria medicine or $100 for a mobile clinic day, your gift saves lives.</p>
                 </div>
                 <div class="cta-action">
-                    <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+                    <a href="donate.html" class="btn btn-red">DONATE NOW</a>
                 </div>
             </div>
         </div>
@@ -320,7 +261,7 @@
         <div class="footer-content">
             <div class="footer-section scroll-fade-left">
                 <div class="footer-logo">
-                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <img src="images/logo.png" alt="Nissi Medical Outreach" class="footer-logo-img">
                     <span>Nissi Medical Outreach</span>
                 </div>
                 <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
@@ -345,10 +286,10 @@
             
             <div class="footer-section scroll-fade-right">
                 <h3>Stay Updated</h3>
-                <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                    <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                    <input type="email" placeholder="Your email address" required class="newsletter-input">
+                    <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
                 </form>
             </div>
             

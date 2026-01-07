@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Nissi Medical Outreach</title>
 
-    <link rel="icon" type="image/png" href="images/nissi.ico">
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
@@ -24,314 +24,13 @@
           "breadcrumb": {
             "@id": "https://nissimedicaloutreach.org/contact.html#breadcrumb"
           }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://nissimedicaloutreach.org/#organization",
-          "name": "Nissi Medical Outreach",
-          "url": "https://nissimedicaloutreach.org/",
-          "logo": "https://nissimedicaloutreach.org/images/logo1.webp",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+256-782-862777",
-            "contactType": "customer service",
-            "email": "nissimedicaloutreach@gmail.com",
-            "areaServed": "UG",
-            "availableLanguage": "English"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kampala",
-            "addressCountry": "UG"
-          },
-          "sameAs": [
-            "https://www.facebook.com/p/Nissi-Medical-Outreach-100057958748446/"
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://nissimedicaloutreach.org/contact.html#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://nissimedicaloutreach.org/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Contact",
-              "item": "https://nissimedicaloutreach.org/contact.html"
-            }
-          ]
         }
       ]
     }
     </script>
-    <style>
-        /* Enhanced Contact Form Styles */
-        #contact-form {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0f0f0;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-        }
-
-        .form-group {
-            flex: 1;
-            margin-bottom: 20px;
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        #contact-form input:focus,
-        #contact-form textarea:focus {
-            border-color: #e67e22;
-            background-color: #fff;
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.1);
-        }
-
-        #contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        #contact-form button[type="submit"] {
-            width: 100%;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        #contact-form button[type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
-            background-color: #d35400;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            #contact-form {
-                padding: 25px;
-            }
-        }
-
-        /* Floating Label Styles */
-        .floating-group {
-            position: relative;
-        }
-        
-        .floating-group label {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            color: #888;
-            pointer-events: none;
-            transition: 0.2s ease all;
-            background-color: transparent;
-        }
-
-        .floating-group input:focus ~ label,
-        .floating-group input:not(:placeholder-shown) ~ label,
-        .floating-group textarea:focus ~ label,
-        .floating-group textarea:not(:placeholder-shown) ~ label {
-            top: -10px;
-            left: 10px;
-            font-size: 12px;
-            background-color: #fff;
-            padding: 0 5px;
-            color: #e67e22;
-            font-weight: 600;
-            z-index: 10;
-        }
-
-        .floating-group input:not(:placeholder-shown),
-        .floating-group textarea:not(:placeholder-shown) {
-            background-color: #fff;
-        }
-
-        /* Success Message Card Styles */
-        #thank-you-msg {
-            text-align: center;
-            padding: 50px 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0f0f0;
-            animation: fadeIn 0.8s ease-out forwards;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background-color: #ecfdf5;
-            color: #059669;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 36px;
-        }
-
-        .success-title {
-            color: #111827;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .success-text {
-            color: #4b5563;
-            margin-bottom: 35px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .success-btn {
-            display: inline-block;
-            padding: 14px 35px;
-            background-color: #e67e22;
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
-            border: 2px solid #e67e22;
-            cursor: pointer;
-        }
-
-        .success-btn:hover {
-            background-color: #d35400;
-            border-color: #d35400;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
-        }
-
-        .success-actions {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .success-btn.outline {
-            background-color: transparent;
-            color: #e67e22;
-            box-shadow: none;
-        }
-
-        .success-btn.outline:hover {
-            background-color: #e67e22;
-            color: white;
-            border-color: #e67e22;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-        }
-
-        /* Email Tooltip Styles */
-        [data-type="email-icon"] {
-            position: relative;
-        }
-        [data-type="email-icon"]::after {
-            content: attr(data-email);
-            position: absolute;
-            top: 140%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
-            z-index: 1000;
-            pointer-events: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        [data-type="email-icon"]:hover::after {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-        @media (max-width: 768px) {
-            .footer-content, .footer-section {
-                text-align: center;
-            }
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
-        }
-    </style>
 </head>
 
-<body>
+<body class="contact-page">
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
@@ -345,7 +44,7 @@
                     </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -362,8 +61,7 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
-                <span>Nissi Medical Outreach</span>
+                <img src="images/logo.png" alt="Nissi Medical Outreach" class="logo-img">
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -372,10 +70,11 @@
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html">Causes</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="newsletter.html">Newsletter</a></li>
             </ul>
 
-            <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+            <a href="donate.html" class="btn btn-red">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -415,7 +114,7 @@
                             <p><a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3">
                                 [Loading...]
                             </a></p>
-                            <p><a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366; font-weight: 600; font-size: 0.9em; margin-top: 5px; display: inline-block;">
+                            <p><a href="#" class="decode-contact whatsapp-meta" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp">
                                 <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                             </a></p>
                         </div>
@@ -538,7 +237,7 @@
             <div class="footer-content">
                 <div class="footer-section scroll-fade-left">
                     <div class="footer-logo">
-                        <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                        <img src="images/logo.png" alt="Nissi Medical Outreach" class="footer-logo-img">
                         <span>Nissi Medical Outreach</span>
                     </div>
                     <p>A Christ-centered community health initiative committed to strengthening healthcare access in
@@ -564,10 +263,10 @@
 
                 <div class="footer-section scroll-fade-right">
                     <h3>Stay Updated</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                    <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                        <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                        <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                        <input type="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
                     </form>
                 </div>
 

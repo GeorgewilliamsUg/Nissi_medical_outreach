@@ -11,7 +11,7 @@
 
     <meta property="og:title" content="About Nissi Medical Outreach | Medical Missions in Uganda">
     <meta property="og:description" content="We serve communities across Uganda through medical outreach, preventive care, and compassionate Christian health services.">
-    <meta property="og:image" content="https://nissimedicaloutreach.org/images/logo.webp">
+    <meta property="og:image" content="https://nissimedicaloutreach.org/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nissimedicaloutreach.org/about">
 
@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="About Nissi Medical Outreach">
     <meta name="twitter:description" content="Nissi Medical Outreach provides medical missions and community health services across Uganda.">
 
-    <link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://nissimedicaloutreach.org/about">
     
@@ -29,69 +29,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
-    <style>
-        /* Email Tooltip Styles */
-        [data-type="email-icon"] {
-            position: relative;
-        }
-        [data-type="email-icon"]::after {
-            content: attr(data-email);
-            position: absolute;
-            top: 140%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
-            z-index: 1000;
-            pointer-events: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        [data-type="email-icon"]:hover::after {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 120px;
-            right: 40px;
-            background-color: #25d366;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .footer-content, .footer-section {
-                text-align: center;
-            }
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
-        }
-    </style>
+    <!-- Styles consolidated into styles.css -->
 
  <script type="application/ld+json">
 {
@@ -144,7 +82,7 @@
  <div class="top-bar">
         <div class="container top-bar-content">
             <div class="tb-left">
-                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="contact.html" class="tb-cta-link">Become a Volunteer</a></p>
+                <p><i class="fa-solid fa-people-group"></i> <span>Nissi Medical Outreach</span> <a href="volunteer.html" class="tb-cta-link">Become a Volunteer</a></p>
             </div>
             <div class="tb-right">
                 <div class="info-item">
@@ -153,7 +91,7 @@
                     </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -170,8 +108,7 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="images/logo.webp" alt="Nissi Medical Outreach" class="logo-img">
-                <span>Nissi Medical Outreach</span>
+                <img src="images/logo.png" alt="Nissi Medical Outreach" class="logo-img">
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -180,10 +117,11 @@
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html">Causes</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="newsletter.html" class="nav-btn-highlight">Newsletter</a></li>
             </ul>
 
-            <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
+            <a href="donate.html" class="btn btn-red">DONATE NOW</a>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -227,7 +165,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
                 
                 <!-- Mission -->
-                <div class="scroll-fade-left" style="background: var(--primary-orange); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                <div class="scroll-fade-left" style="background: var(--theme-red); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
                     <div style="width: 60px; height: 60px; background: #FFF7ED; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #F97316;">
                         <i class="fa-solid fa-heart-pulse" style="font-size: 1.6rem;"></i>
                     </div>
@@ -244,7 +182,7 @@
                 </div>
 
                 <!-- Vision -->
-                <div class="scroll-fade-right" style="background: var(--primary-orange); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                <div class="scroll-fade-right" style="background: var(--theme-blue); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
                     <div style="width: 60px; height: 60px; background: #F3E8FF; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #7C3AED;">
                         <i class="fa-solid fa-lightbulb" style="font-size: 1.6rem;"></i>
                     </div>
@@ -349,7 +287,7 @@
                  </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="donate.html" class="btn btn-orange">Support This Work</a>
+                <a href="donate.html" class="btn btn-red">Support This Work</a>
             </div>
         </div>
     </section>
@@ -393,7 +331,9 @@
                 </div>
             </div>
 
-            <div class="board-grid">
+            <div class="board-slider-wrapper">
+            <button class="slider-nav prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="board-slider">
                 <div class="board-member">
                     <img src="images/baale.webp" alt="Dr. Emmanuel Baale">
                     <h4>Dr. Emmanuel Baale</h4>
@@ -401,22 +341,29 @@
                 </div>
                 
                 <div class="board-member">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ms. Namukasa Litone">
+                    <img src="images/Lyton.webp" alt="Ms. Namukasa Litone">
                     <h4>Ms. Namukasa Litone</h4>
-                    <span>Vice Chairperson</span>
+                    <span>Board Member</span>
                 </div>
                 
                 <div class="board-member">
-                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Nasirumbi SlyIvia Khisa">
-                    <h4>Ms.Nasirumbi SlyIvia Khisa</h4>
-                    <span>Treasurer</span>
+                    <img src="images/Slyvia.webp" alt="Nasirumbi SlyIvia Khisa">
+                    <h4>Ms.Nasirumbi SlyIvia</h4>
+                    <span>Board Member</span>
                 </div>
                 
                 <div class="board-member">
-                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Okware Patric">
+                    <img src="images/Okware.webp" alt="Dr. Okware Patric">
                     <h4>Dr. Okware Patric</h4>
                     <span>Board Member</span>
                 </div>
+                <div class="board-member">
+                    <img src="images/Jemba.webp" alt="Dr. Jemba Michael ">
+                    <h4>Dr. Jemba Michael</h4>
+                    <span>Board Member</span>
+                </div>
+            </div>
+            <button class="slider-nav next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
         </div>
@@ -588,7 +535,7 @@
         <div class="footer-content">
             <div class="footer-section scroll-fade-left">
                 <div class="footer-logo">
-                    <img src="images/logo.webp" alt="Nissi Medical Outreach" class="footer-logo-img">
+                    <img src="images/logo.png" alt="Nissi Medical Outreach" class="footer-logo-img">
                     <span>Nissi Medical Outreach</span>
                 </div>
                 <p>A Christ-centered community health initiative committed to strengthening healthcare access in underserved Ugandan communities.</p>
@@ -613,10 +560,10 @@
             
             <div class="footer-section scroll-fade-right">
                 <h3>Stay Updated</h3>
-                <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                    <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                    <input type="email" placeholder="Your email address" required class="newsletter-input">
+                    <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
                 </form>
             </div>
             
@@ -648,6 +595,52 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.board-slider');
+            const prevBtn = document.querySelector('.slider-nav.prev');
+            const nextBtn = document.querySelector('.slider-nav.next');
+
+            if(slider && prevBtn && nextBtn) {
+                // Clone items for infinite continuous scroll
+                const items = Array.from(slider.children);
+                items.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    clone.setAttribute('aria-hidden', 'true');
+                    slider.appendChild(clone);
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -310, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: 310, behavior: 'smooth' });
+                });
+
+                // Continuous auto-scroll
+                let isHovered = false;
+                const speed = 0.8; // Adjust speed here (pixels per frame)
+
+                function animate() {
+                    if (!isHovered) {
+                        slider.scrollLeft += speed;
+                        // Reset scroll when we reach the halfway point (end of original items)
+                        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                            slider.scrollLeft = 0;
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+                animate();
+
+                // Pause auto-scroll when hovering over the slider area
+                slider.parentElement.addEventListener('mouseenter', () => isHovered = true);
+                slider.parentElement.addEventListener('mouseleave', () => isHovered = false);
+                slider.parentElement.addEventListener('touchstart', () => isHovered = true, { passive: true });
+                slider.parentElement.addEventListener('touchend', () => isHovered = false);
+            }
+        });
+    </script>
     <script src="main.js" defer></script>
 </body>
 </html>

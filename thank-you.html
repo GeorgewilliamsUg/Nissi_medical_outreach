@@ -5,49 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Nissi Medical Outreach</title>
     
-    <link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Email Tooltip Styles */
-        [data-type="email-icon"] {
-            position: relative;
-        }
-        [data-type="email-icon"]::after {
-            content: attr(data-email);
-            position: absolute;
-            top: 140%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, top 0.3s;
-            z-index: 1000;
-            pointer-events: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        [data-type="email-icon"]:hover::after {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-        @media (max-width: 768px) {
-            .footer-content, .footer-section {
-                text-align: center;
-            }
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
-        }
-    </style>
+    <!-- Styles consolidated into styles.css -->
 </head>
 <body>
     <!-- Top Bar -->
@@ -96,7 +58,7 @@
                     </a>
                 </div>
                 <div class="info-item">
-                    <a href="#" class="decode-contact" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" style="color: #25d366;" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                    <a href="#" class="decode-contact whatsapp-link" data-encoded="KzI1NiA3ODIgODYyNzc3" data-type="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -123,7 +85,8 @@
                 <li><a href="missions.html">Missions</a></li>
                 <li><a href="causes.html">Causes</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="newsletter.html" class="nav-btn-highlight">Newsletter</a></li>
             </ul>
 
             <a href="donate.html" class="btn btn-orange">DONATE NOW</a>
@@ -172,10 +135,10 @@
                 
                 <div class="footer-section scroll-fade-right">
                     <h3>Stay Updated</h3>
-                    <p style="font-size: 14px; margin-bottom: 15px; color: #cbd5d4;">Subscribe to our newsletter for the latest mission updates and stories.</p>
+                    <p class="newsletter-desc">Subscribe to our newsletter for the latest mission updates and stories.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                        <input type="email" placeholder="Your email address" required style="width: 100%; padding: 12px; border-radius: 5px; border: none; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
-                        <button type="submit" class="btn btn-orange" style="width: 100%; padding: 10px; font-size: 14px; border: none; cursor: pointer;">Subscribe</button>
+                        <input type="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="btn btn-orange newsletter-btn">Subscribe</button>
                     </form>
                 </div>
                 
