@@ -28,6 +28,55 @@ if (navToggle && navLinks) {
     });
 }
 
+// Upcoming mission modal (Kikyusa)
+const missionModal = document.getElementById('kikyusaMissionModal');
+const missionTriggers = document.querySelectorAll('[data-mission-modal="kikyusa"]');
+
+if (missionModal && missionTriggers.length) {
+    const closeBtn = missionModal.querySelector('.mission-modal-close');
+    let lastFocused = null;
+
+    const openModal = () => {
+        lastFocused = document.activeElement;
+        missionModal.classList.add('is-open');
+        missionModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        if (closeBtn) closeBtn.focus();
+    };
+
+    const closeModal = () => {
+        missionModal.classList.remove('is-open');
+        missionModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
+    };
+
+    missionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    missionModal.addEventListener('click', (e) => {
+        if (e.target === missionModal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && missionModal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+}
+
 // Back to Top Button
 const backToTopButton = document.getElementById('backToTop');
 if (backToTopButton) {

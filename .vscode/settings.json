@@ -1,0 +1,6 @@
+{
+    "chat.extensionUnification.enabled": true,
+    "files.autoSave": "off",
+    "github.copilot.chat.agent.autoFix": true,
+    "amazonQ.telemetry": false
+}
