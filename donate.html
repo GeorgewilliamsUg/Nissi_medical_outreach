@@ -75,17 +75,18 @@
         <div class="container">
             <div class="donate-container">
                 <form id="donationForm">
+                    <input type="hidden" id="donationAmount" name="amount">
                     <h3 class="section-title">1. Choose Donation Amount</h3>
                     <div class="amount-grid">
-                        <div class="amount-btn" data-amount="10">$10</div>
-                        <div class="amount-btn active" data-amount="25">$25</div>
-                        <div class="amount-btn" data-amount="50">$50</div>
-                        <div class="amount-btn" data-amount="100">$100</div>
-                        <div class="amount-btn" data-amount="250">$250</div>
+                        <div class="amount-btn" data-amount="36000">UGX 36,000</div>
+                        <div class="amount-btn active" data-amount="90000">UGX 90,000</div>
+                        <div class="amount-btn" data-amount="180000">UGX 180,000</div>
+                        <div class="amount-btn" data-amount="360000">UGX 360,000</div>
+                        <div class="amount-btn" data-amount="900000">UGX 900,000</div>
                         <div class="amount-btn" data-amount="custom">Custom</div>
                     </div>
                     <div class="custom-amount" id="customAmountWrapper" style="display: none;">
-                        <input type="number" placeholder="Enter custom amount (USD)">
+                        <input type="number" id="customAmount" name="customAmount" placeholder="Enter custom amount (UGX)">
                     </div>
 
                     <h3 class="section-title">2. Select Payment Method</h3>
@@ -107,20 +108,22 @@
                     <h3 class="section-title">3. Your Information</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" required>
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
                         </div>
                         <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" required>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
 
-                    <button type="submit" class="donate-btn">COMPLETE DONATION</button>
+                    <button type="submit" id="donateBtn" class="donate-btn">COMPLETE DONATION</button>
+
+                    <p id="donationStatus" style="display:none; margin-top:15px; font-size:14px;"></p>
                 </form>
             </div>
         </div>

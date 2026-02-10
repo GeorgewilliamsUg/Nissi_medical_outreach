@@ -141,19 +141,99 @@ if (faqItems.length) {
 }
 
 // Donation form interactions (if donation form exists)
-const amountBtns = document.querySelectorAll?.('.amount-btn') || [];
-const customAmountWrapper = document.getElementById?.('customAmountWrapper');
-if (amountBtns.length) {
-    amountBtns.forEach(btn => {
+const amountButtons = document.querySelectorAll('.amount-btn');
+const donationAmountInput = document.getElementById('donationAmount');
+const customAmountWrapper = document.getElementById('customAmountWrapper');
+const customAmountInput = document.getElementById('customAmount');
+
+if (amountButtons.length && donationAmountInput) {
+    amountButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            amountBtns.forEach(b => b.classList.remove('active'));
+            amountButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            if (btn.dataset.amount === 'custom' && customAmountWrapper) {
-                customAmountWrapper.style.display = 'block';
-            } else if (customAmountWrapper) {
-                customAmountWrapper.style.display = 'none';
+
+            const amount = btn.dataset.amount;
+
+            if (amount === 'custom') {
+                if (customAmountWrapper) {
+                    customAmountWrapper.style.display = 'block';
+                }
+                donationAmountInput.value = '';
+            } else {
+                if (customAmountWrapper) {
+                    customAmountWrapper.style.display = 'none';
+                }
+                donationAmountInput.value = amount;
             }
         });
+    });
+}
+
+if (customAmountInput && donationAmountInput) {
+    customAmountInput.addEventListener('input', () => {
+        donationAmountInput.value = customAmountInput.value;
+    });
+}
+
+const donationForm = document.getElementById('donationForm');
+
+if (donationForm) {
+    donationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const amount = document.getElementById('donationAmount').value;
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        const status = document.getElementById('donationStatus');
+        const button = document.getElementById('donateBtn');
+
+        if (!amount || Number(amount) <= 0) {
+            alert('Please select or enter a valid donation amount.');
+            return;
+        }
+
+        button.disabled = true;
+        status.style.display = 'block';
+        status.innerText = 'Redirecting to secure payment…';
+
+        try {
+            const response = await fetch(
+                'https://pesapal-ipn-n3h3.onrender.com/api/create-order/',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: amount,
+                        currency: 'USD',
+                        description: 'Donation to Nissi Medical Outreach',
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error('Failed to initiate payment');
+            }
+
+            const data = await response.json();
+
+            if (!data.checkout_url) {
+                throw new Error('Missing checkout URL');
+            }
+
+            window.location.href = data.checkout_url;
+        } catch (error) {
+            console.error(error);
+            status.innerText =
+                'We could not start the payment. Please try again later.';
+            button.disabled = false;
+        }
     });
 }
 
@@ -164,14 +244,6 @@ if (methodBtns.length) {
             methodBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
-    });
-}
-
-const donationForm = document.getElementById?.('donationForm');
-if (donationForm) {
-    donationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        window.location.href = 'thank-you.html';
     });
 }
 
