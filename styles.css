@@ -4675,6 +4675,34 @@ p {
     padding-bottom: 12px;
 }
 
+.donation-currency-note {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 8px 0 20px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 216, 160, 0.35), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    color: #3f4754;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 18px rgba(255, 140, 0, 0.12);
+}
+
+.currency-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff8c00 0%, #ffb347 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+}
+
 .amount-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

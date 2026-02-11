@@ -83,16 +83,20 @@
                     </div>
 
                     <h3 class="section-title">1. Donation Amount</h3>
+                    <p class="donation-currency-note">
+                        <span class="currency-badge">UGX</span>
+                        All amounts are in UGX (1 USD = 3,500 UGX).
+                    </p>
                     <div class="amount-grid" role="group" aria-label="Donation amount options">
-                        <button type="button" class="amount-btn" data-amount="10">10</button>
-                        <button type="button" class="amount-btn" data-amount="25">25</button>
-                        <button type="button" class="amount-btn" data-amount="50">50</button>
-                        <button type="button" class="amount-btn" data-amount="100">100</button>
+                        <button type="button" class="amount-btn" data-amount="35000">UGX 35,000</button>
+                        <button type="button" class="amount-btn" data-amount="87500">UGX 87,500</button>
+                        <button type="button" class="amount-btn" data-amount="175000">UGX 175,000</button>
+                        <button type="button" class="amount-btn" data-amount="350000">UGX 350,000</button>
                         <button type="button" class="amount-btn" data-amount="custom">Custom</button>
                     </div>
                     <div class="custom-amount" id="customAmountWrapper" hidden>
                         <label for="customAmount">Custom Amount</label>
-                        <input type="number" id="customAmount" name="customAmount" min="1" inputmode="decimal" placeholder="Enter custom amount">
+                        <input type="number" id="customAmount" name="customAmount" min="1" inputmode="decimal" placeholder="Enter amount in UGX">
                     </div>
 
                     <h3 class="section-title">2. Donor Information</h3>
@@ -311,7 +315,7 @@
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                             amount: donationAmountInput.value,
-                            currency: "USD",
+                            currency: "UGX",
                             first_name: document.getElementById("firstName").value.trim(),
                             last_name: document.getElementById("lastName").value.trim(),
                             email: document.getElementById("email").value.trim()

@@ -200,7 +200,7 @@ if (donationForm && !donationForm.dataset.pesapalUrl) {
 
         try {
             const response = await fetch(
-                'https://pesapal-ipn-n3h3.onrender.com/api/create-order/',
+                'https://pesapal-ipn-n3h3.onrender.com/ipn/create-order/',
                 {
                     method: 'POST',
                     headers: {
@@ -208,7 +208,7 @@ if (donationForm && !donationForm.dataset.pesapalUrl) {
                     },
                     body: JSON.stringify({
                         amount: amount,
-                        currency: 'USD',
+                        currency: 'UGX',
                         description: 'Donation to Nissi Medical Outreach',
                         first_name: firstName,
                         last_name: lastName,
