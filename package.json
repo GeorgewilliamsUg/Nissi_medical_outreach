@@ -4,9 +4,11 @@
   "description": "Render local HTML to PDF using Puppeteer",
   "main": "render_pdf.js",
   "scripts": {
-    "render": "node render_pdf.js"
+    "render": "node render_pdf.js",
+    "server": "node server/index.js"
   },
   "dependencies": {
-    "puppeteer": "^21.3.8"
+    "puppeteer": "^21.3.8",
+    "express": "^4.19.2"
   }
 }

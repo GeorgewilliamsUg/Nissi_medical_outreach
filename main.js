@@ -177,7 +177,7 @@ if (customAmountInput && donationAmountInput) {
 
 const donationForm = document.getElementById('donationForm');
 
-if (donationForm) {
+if (donationForm && !donationForm.dataset.pesapalUrl) {
     donationForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 

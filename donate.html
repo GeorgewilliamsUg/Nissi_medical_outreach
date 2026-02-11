@@ -74,56 +74,73 @@
     <section class="donate-section">
         <div class="container">
             <div class="donate-container">
-                <form id="donationForm">
+                <form id="donationForm" novalidate>
                     <input type="hidden" id="donationAmount" name="amount">
-                    <h3 class="section-title">1. Choose Donation Amount</h3>
-                    <div class="amount-grid">
-                        <div class="amount-btn" data-amount="36000">UGX 36,000</div>
-                        <div class="amount-btn active" data-amount="90000">UGX 90,000</div>
-                        <div class="amount-btn" data-amount="180000">UGX 180,000</div>
-                        <div class="amount-btn" data-amount="360000">UGX 360,000</div>
-                        <div class="amount-btn" data-amount="900000">UGX 900,000</div>
-                        <div class="amount-btn" data-amount="custom">Custom</div>
-                    </div>
-                    <div class="custom-amount" id="customAmountWrapper" style="display: none;">
-                        <input type="number" id="customAmount" name="customAmount" placeholder="Enter custom amount (UGX)">
+
+                    <div class="donation-header">
+                        <h2>Support Nissi Medical Outreach</h2>
+                        <p>Your donation helps provide medical care, health education, and compassionate outreach to underserved communities.</p>
                     </div>
 
-                    <h3 class="section-title">2. Select Payment Method</h3>
-                    <div class="payment-methods">
-                        <div class="payment-method active">
-                            <i class="fa-regular fa-credit-card"></i>
-                            <span>Credit / Debit Card</span>
-                        </div>
-                        <div class="payment-method">
-                            <i class="fa-brands fa-paypal"></i>
-                            <span>PayPal</span>
-                        </div>
-                        <div class="payment-method">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <span>Mobile Money</span>
-                        </div>
+                    <h3 class="section-title">1. Donation Amount</h3>
+                    <div class="amount-grid" role="group" aria-label="Donation amount options">
+                        <button type="button" class="amount-btn" data-amount="10">10</button>
+                        <button type="button" class="amount-btn" data-amount="25">25</button>
+                        <button type="button" class="amount-btn" data-amount="50">50</button>
+                        <button type="button" class="amount-btn" data-amount="100">100</button>
+                        <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+                    </div>
+                    <div class="custom-amount" id="customAmountWrapper" hidden>
+                        <label for="customAmount">Custom Amount</label>
+                        <input type="number" id="customAmount" name="customAmount" min="1" inputmode="decimal" placeholder="Enter custom amount">
                     </div>
 
-                    <h3 class="section-title">3. Your Information</h3>
+                    <h3 class="section-title">2. Donor Information</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
                     </div>
 
-                    <button type="submit" id="donateBtn" class="donate-btn">COMPLETE DONATION</button>
+                    <h3 class="section-title">3. Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="pesapal" checked>
+                            <span class="option-title">PesaPal – East Africa</span>
+                            <span class="option-desc">For donors in Uganda, Kenya, Tanzania, and surrounding regions</span>
+                            <span class="option-detail">Supports mobile money and card payments. You will proceed to secure PesaPal hosted checkout.</span>
+                            <img class="payment-logo" src="images/pesapal.png" alt="PesaPal logo">
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="worldremit">
+                            <span class="option-title">WorldRemit – International Donors</span>
+                            <span class="option-desc">For donors outside East Africa</span>
+                            <img class="payment-logo" src="images/WorldRemit.png" alt="WorldRemit logo">
+                        </label>
+                    </div>
 
-                    <p id="donationStatus" style="display:none; margin-top:15px; font-size:14px;"></p>
+                    <div id="worldRemitNotice" class="worldremit-note" hidden>
+                        <h4>WorldRemit Donation Instructions</h4>
+                        <p>If you are donating from outside East Africa, please send your donation via WorldRemit using the details below:</p>
+                        <p><strong>Recipient Name:</strong> Baale Emmanuel</p>
+                        <p><strong>Mobile Number:</strong> +256 782 862777</p>
+                        <p>After completing your transfer, please contact Dr. Baale for confirmation or further guidance on supporting Nissi Medical Outreach.</p>
+                    </div>
+
+                    <button type="submit" id="donateBtn" class="donate-btn">Proceed to Donate</button>
+
+                    <p class="donation-footer-note">All donations directly support medical missions, community health programs, and outreach initiatives of Nissi Medical Outreach.</p>
+
+                    <p id="donationStatus" style="display:none; margin-top:15px; font-size:14px;" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -192,6 +209,134 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('donationForm');
+            if (!form) {
+                return;
+            }
+
+            const amountButtons = Array.from(document.querySelectorAll('.amount-btn'));
+            const customAmountWrapper = document.getElementById('customAmountWrapper');
+            const customAmountInput = document.getElementById('customAmount');
+            const donationAmountInput = document.getElementById('donationAmount');
+            const paymentRadios = Array.from(document.querySelectorAll('input[name="paymentMethod"]'));
+            const worldRemitNotice = document.getElementById('worldRemitNotice');
+            const donateBtn = document.getElementById('donateBtn');
+            const donationStatus = document.getElementById('donationStatus');
+
+            const setStatus = (message, isError) => {
+                if (!donationStatus) {
+                    return;
+                }
+                donationStatus.textContent = message;
+                donationStatus.style.display = message ? 'block' : 'none';
+                donationStatus.style.color = isError ? '#b42318' : '#166534';
+            };
+
+            const setActiveAmount = (button) => {
+                amountButtons.forEach((btn) => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+
+                button.classList.add('active');
+                button.setAttribute('aria-pressed', 'true');
+
+                const amountValue = button.dataset.amount;
+                if (amountValue === 'custom') {
+                    customAmountWrapper.hidden = false;
+                    customAmountInput.focus();
+                    donationAmountInput.value = customAmountInput.value.trim();
+                } else {
+                    customAmountWrapper.hidden = true;
+                    customAmountInput.value = '';
+                    donationAmountInput.value = amountValue;
+                }
+            };
+
+            amountButtons.forEach((button) => {
+                button.setAttribute('aria-pressed', 'false');
+                button.addEventListener('click', () => {
+                    setActiveAmount(button);
+                    setStatus('', false);
+                });
+            });
+
+            if (customAmountInput) {
+                customAmountInput.addEventListener('input', () => {
+                    donationAmountInput.value = customAmountInput.value.trim();
+                });
+            }
+
+            const updatePaymentUI = () => {
+                const selected = paymentRadios.find((radio) => radio.checked);
+                if (selected && selected.value === 'worldremit') {
+                    worldRemitNotice.hidden = false;
+                    donateBtn.textContent = 'I Have Sent My Donation';
+                } else {
+                    worldRemitNotice.hidden = true;
+                    donateBtn.textContent = 'Proceed to Donate';
+                }
+                setStatus('', false);
+            };
+
+            paymentRadios.forEach((radio) => {
+                radio.addEventListener('change', updatePaymentUI);
+            });
+
+            updatePaymentUI();
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                if (!donationAmountInput.value) {
+                    setStatus('Please select or enter a donation amount.', true);
+                    return;
+                }
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    setStatus('Please complete the required donor information.', true);
+                    return;
+                }
+
+                const selectedPayment = paymentRadios.find((radio) => radio.checked);
+                if (selectedPayment && selectedPayment.value === 'pesapal') {
+                    donateBtn.disabled = true;
+                    setStatus("Redirecting to secure payment…", false);
+
+                    fetch("https://pesapal-ipn-n3h3.onrender.com/ipn/create-order/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            amount: donationAmountInput.value,
+                            currency: "USD",
+                            first_name: document.getElementById("firstName").value.trim(),
+                            last_name: document.getElementById("lastName").value.trim(),
+                            email: document.getElementById("email").value.trim()
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.checkout_url) {
+                            throw new Error("No checkout URL returned");
+                        }
+                        window.location.href = data.checkout_url;
+                    })
+                    .catch(err => {
+                        donateBtn.disabled = false;
+                        setStatus("Unable to start payment. Please try again.", true);
+                        console.error(err);
+                    });
+
+                    return;
+                } else {
+                    setStatus('Thank you. Please complete your WorldRemit transfer and contact Dr. Baale for confirmation.', false);
+                }
+            });
+        });
+    </script>
     <script src="main.js" defer></script>
 </body>
 </html>
